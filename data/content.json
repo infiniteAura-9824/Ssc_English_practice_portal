@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-18 06:00 AM IST",
-  "day_count": 5,
+  "last_updated": "20/11/2026, 9:12:31 am IST",
+  "day_count": 6,
   "vocab": [
     {
       "day": "Day 1",
@@ -1051,6 +1051,209 @@
       "word": "Zealous",
       "meaning": "उत्साही / जोशीला | Syn: Enthusiastic, Fervent | Ant: Apathetic, Indifferent",
       "important": true
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Omnipotent",
+      "meaning": "सर्वशक्तिमान (Having unlimited or universal power)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Omnipresent",
+      "meaning": "सर्वव्यापी (Present everywhere at the same time)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Omniscient",
+      "meaning": "सर्वज्ञ (Knowing everything)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Optimist",
+      "meaning": "आशावादी (One who looks at the bright side of things)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Pacifist",
+      "meaning": "शांतिवादी (A person who believes that war and violence are unjustifiable)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Panacea",
+      "meaning": "रामबाण औषधि (A solution or remedy for all difficulties or diseases)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Pedestrian",
+      "meaning": "पैदल यात्री (A person walking along a road rather than travelling in a vehicle)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Philanthropist",
+      "meaning": "मानवप्रेमी / परोपकारी (A person who seeks to promote the welfare of others)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Plagiarism",
+      "meaning": "साहित्यिक चोरी (Copying another person's work or ideas as one's own)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "OWS",
+      "word": "Polyglot",
+      "meaning": "बहुभाषी (A person who knows and is able to use several languages)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "A piece of cake",
+      "meaning": "बहुत आसान काम (Something very easy to do)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Add insult to injury",
+      "meaning": "जले पर नमक छिड़कना (Make a bad situation even worse)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "At a snail's pace",
+      "meaning": "बहुत धीमी गति से (Very slowly)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Burn bridges",
+      "meaning": "वापसी के सारे रास्ते बंद करना (Destroy relationships or options permanently)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Every cloud has a silver lining",
+      "meaning": "हर निराशा में आशा की किरण होती है (Every bad situation has some good aspect)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "In the nick of time",
+      "meaning": "ठीक समय पर / अंतिम क्षण में (Just in time before it is too late)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Let the cat out of the bag",
+      "meaning": "राज़ उजागर कर देना (Reveal a secret carelessly)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Sit on the fence",
+      "meaning": "तटस्थ रहना / निर्णय न लेना (Avoid making a decision or taking sides)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Idiom",
+      "word": "Take with a grain of salt",
+      "meaning": "संदेह के साथ स्वीकार करना (Not take something completely literally)",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Abstruse",
+      "meaning": "गूढ़ / कठिन | Syn: Obscure, Complex | Ant: Clear, Lucid",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Alacrity",
+      "meaning": "तत्परता / फुर्ती | Syn: Eagerness, Readiness | Ant: Apathy, Sluggishness",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Cajole",
+      "meaning": "फुसलाना / चापलूसी करना | Syn: Persuade, Coax | Ant: Bully, Force",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Debilitate",
+      "meaning": "दुर्बल बनाना | Syn: Weaken, Enfeeble | Ant: Strengthen, Fortify",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Eloquent",
+      "meaning": "वाक्पटु / प्रभावशाली | Syn: Fluent, Articulate | Ant: Inarticulate, Tongue-tied",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Esoteric",
+      "meaning": "गुप्त / केवल कुछ लोगों द्वारा समझने योग्य | Syn: Cryptic, Arcane | Ant: Common, Familiar",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Indolent",
+      "meaning": "आलसी / सुस्त | Syn: Lazy, Slothful | Ant: Industrious, Diligent",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Jubilant",
+      "meaning": "उल्लासित / अति प्रसन्न | Syn: Exultant, Joyful | Ant: Despondent, Gloomy",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Mundane",
+      "meaning": "सांसारिक / साधारण | Syn: Ordinary, Routine | Ant: Extraordinary, Exciting",
+      "important": false
+    },
+    {
+      "day": "Day 6",
+      "type": "Syn/Ant",
+      "word": "Transient",
+      "meaning": "क्षणिक / अस्थायी | Syn: Temporary, Fleeting | Ant: Permanent, Enduring",
+      "important": false
     }
   ],
   "passages": [
