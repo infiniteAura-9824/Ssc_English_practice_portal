@@ -1,0 +1,1243 @@
+{
+  "last_updated": "2026-11-18 06:00 AM IST",
+  "day_count": 5,
+  "vocab": [
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Altruist",
+      "meaning": "परोपकारी (One who loves and helps mankind without selfishness)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Amphibian",
+      "meaning": "उभयचर (Animals that live both on land and in water)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Anarchy",
+      "meaning": "अराजकता (Absence of government and law in a country)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Apostate",
+      "meaning": "स्वधर्मत्यागी (One who abandons his religious faith or principles)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Arbitrator",
+      "meaning": "मध्यस्थ (A person appointed by two parties to solve a dispute)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Ascetic",
+      "meaning": "तपस्वी / संन्यासी (One who practices severe self-discipline)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Atheist",
+      "meaning": "नास्तिक (One who does not believe in the existence of God)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Autobiography",
+      "meaning": "आत्मकथा (Life history of a person written by himself)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Avaricious",
+      "meaning": "लालची (Having an extreme greed for wealth)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "OWS",
+      "word": "Belligerent",
+      "meaning": "लड़ाकू / युद्धरत (Hostile and aggressive; engaged in war)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "A blessing in disguise",
+      "meaning": "दुख के भेष में सुख (Something bad at first that results in good)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Beat around the bush",
+      "meaning": "घुमा-फिरा कर बात करना (Avoid talking about the main topic)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Bite the bullet",
+      "meaning": "मजबूरी में कठिन काम स्वीकार करना (Face a difficult situation bravely)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Burn the midnight oil",
+      "meaning": "देर रात तक कड़ी मेहनत/पढ़ाई करना (Work or study late into night)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Call it a day",
+      "meaning": "आज का काम समाप्त करना (Stop working on something for the day)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Cut corners",
+      "meaning": "पैसे या समय बचाने के लिए लापरवाही करना (Do something poorly to save money/time)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Get out of hand",
+      "meaning": "नियंत्रण से बाहर हो जाना (Get out of control)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Hit the nail on the head",
+      "meaning": "बिल्कुल सटीक बात कहना (Say or do something exactly right)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Once in a blue moon",
+      "meaning": "ईद का चाँद / बहुत ही कम (Happening very rarely)",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Idiom",
+      "word": "Under the weather",
+      "meaning": "तबीयत ठीक न होना (Feeling slightly ill or unwell)",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Abandon",
+      "meaning": "त्याग देना | Syn: Forsake, Relinquish | Ant: Retain, Keep",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Abundant",
+      "meaning": "प्रचुर / भरपूर | Syn: Plentiful, Ample | Ant: Scarce, Meager",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Benevolent",
+      "meaning": "दयालु / परोपकारी | Syn: Kind, Generous | Ant: Malevolent, Cruel",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Candid",
+      "meaning": "स्पष्टवादी / निष्कपट | Syn: Frank, Outspoken | Ant: Devious, Secretive",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Diligent",
+      "meaning": "मेहनती / परिश्रमी | Syn: Industrious, Assiduous | Ant: Lazy, Lethargic",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Ephemeral",
+      "meaning": "क्षणभंगुर / अल्पकालिक | Syn: Transient, Fleeting | Ant: Permanent, Eternal",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Frugal",
+      "meaning": "मितव्ययी (कम खर्च करने वाला) | Syn: Thrifty, Economical | Ant: Extravagant, Lavish",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Gregarious",
+      "meaning": "मिलनसार | Syn: Sociable, Outgoing | Ant: Introverted, Reclusive",
+      "important": true
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Hostile",
+      "meaning": "शत्रुतापूर्ण | Syn: Antagonistic, Unfriendly | Ant: Friendly, Cordial",
+      "important": false
+    },
+    {
+      "day": "Day 1",
+      "type": "Syn/Ant",
+      "word": "Meticulous",
+      "meaning": "अति सावधान / सूक्ष्म | Syn: Thorough, Precise | Ant: Careless, Sloppy",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Bibliophile",
+      "meaning": "पुस्तक प्रेमी (One who loves and collects books)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Blasphemy",
+      "meaning": "ईशनिंदा (Speaking irreverently about God or sacred things)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Bohemian",
+      "meaning": "रूढ़िमुक्त कलाकार (Unconventional person not following social norms)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Cacophony",
+      "meaning": "कर्कश ध्वनि (Harsh, discordant mixture of sounds)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Calligraphy",
+      "meaning": "सुलेखन (The art of beautiful handwriting)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Cannibal",
+      "meaning": "नरभक्षी (One who eats human flesh)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Carnivorous",
+      "meaning": "मांसाहारी (Animals that feed on flesh)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Chauvinist",
+      "meaning": "अंधदेशभक्त / कट्टर (Exaggerated or aggressive patriotism)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Claustrophobia",
+      "meaning": "बंद जगह का डर (Extreme fear of confined or small spaces)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "OWS",
+      "word": "Connoisseur",
+      "meaning": "कला या स्वाद का पारखी (An expert judge in matters of taste or art)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Add fuel to the fire",
+      "meaning": "आग में घी डालना (Make a bad situation worse)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "At the eleventh hour",
+      "meaning": "अंतिम समय में (At the very last moment)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Back to the drawing board",
+      "meaning": "नए सिरे से शुरुआत करना (Start planning all over again after failure)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Barking up the wrong tree",
+      "meaning": "गलत दिशा में प्रयास करना (Accusing or pursuing the wrong course)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Bolt from the blue",
+      "meaning": "आकस्मिक विपत्ति (A complete and unexpected surprise)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Break the ice",
+      "meaning": "चुप्पी तोड़ना / बातचीत शुरू करना (Initiate social interaction)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "By leaps and bounds",
+      "meaning": "दिन दूनी रात चौगुनी (Very rapidly)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Costs an arm and a leg",
+      "meaning": "बहुत महंगा होना (Extremely expensive)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Cry over spilt milk",
+      "meaning": "व्यर्थ पछताना (Complain about a loss from the past)",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Idiom",
+      "word": "Devil's advocate",
+      "meaning": "बहस के लिए विपरीत तर्क देने वाला (Argues against something to test validity)",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Adversity",
+      "meaning": "विपत्ति / कठिनाई | Syn: Misfortune, Hardship | Ant: Prosperity, Fortune",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Audacious",
+      "meaning": "निडर / दुस्साहसी | Syn: Bold, Daring | Ant: Timid, Cowardly",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Callous",
+      "meaning": "कठोर / संवेदनहीन | Syn: Heartless, Insensitive | Ant: Compassionate, Kind",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Dilapidated",
+      "meaning": "जर्जर / टूटा-फूटा | Syn: Ruined, Ramshackle | Ant: Intact, Restored",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Emulate",
+      "meaning": "अनुकरण करना / बराबरी करना | Syn: Imitate, Mimic | Ant: Neglect, Ignore",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Fastidious",
+      "meaning": "नकचढ़ा / अति सूक्ष्मदर्शी | Syn: Meticulous, Finicky | Ant: Careless, Easygoing",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Garrulous",
+      "meaning": "बातूनी | Syn: Talkative, Loquacious | Ant: Taciturn, Reticent",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Impeccable",
+      "meaning": "त्रुटिहीन / निर्दोष | Syn: Flawless, Faultless | Ant: Defective, Imperfect",
+      "important": true
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Lethargic",
+      "meaning": "सुस्त / आलसी | Syn: Sluggish, Inactive | Ant: Energetic, Vigorous",
+      "important": false
+    },
+    {
+      "day": "Day 2",
+      "type": "Syn/Ant",
+      "word": "Pragmatic",
+      "meaning": "व्यावहारिक | Syn: Practical, Realistic | Ant: Idealistic, Impractical",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Demagogue",
+      "meaning": "जनोत्तेजक नेता (A political leader who seeks support by appealing to popular desires)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Eccentric",
+      "meaning": "सनकी / विचित्र (Unconventional and slightly strange person)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Egoist",
+      "meaning": "अहंवादी / स्वार्थी (A person who is excessively conceited or self-centered)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Elegy",
+      "meaning": "शोकगीत (A poem of serious reflection, typically a lament for the dead)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Embezzlement",
+      "meaning": "गबन / हेराफेरी (Theft or misappropriation of funds placed in one's trust)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Epitaph",
+      "meaning": "समाधि-लेख (Words inscribed on a tomb in memory of the person buried)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Etymology",
+      "meaning": "शब्द-व्युत्पत्ति शास्त्र (The study of the origin and history of words)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Exonerate",
+      "meaning": "दोषमुक्त करना (Absolve someone from blame for a fault or wrongdoing)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Extravagant",
+      "meaning": "फिजूलखर्च (Lacking restraint in spending money or using resources)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "OWS",
+      "word": "Fanatic",
+      "meaning": "कट्टरपंथी (A person filled with excessive and single-minded zeal)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Face the music",
+      "meaning": "किए का परिणाम भुगतना (Accept unpleasant consequences of one's actions)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Feather in one's cap",
+      "meaning": "गौरवपूर्ण उपलब्धि (An achievement to be proud of)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Fit as a fiddle",
+      "meaning": "पूरी तरह स्वस्थ (In very good health and physical condition)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Gift of the gab",
+      "meaning": "वाक्पटुता / बोलने की कला (Ability to speak fluently and persuasively)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Herculean task",
+      "meaning": "अत्यंत कठिन कार्य (A task requiring huge effort or strength)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "In hot water",
+      "meaning": "मुसीबत में पड़ना (In trouble or difficulty)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Keep at bay",
+      "meaning": "दूर रखना (Prevent something/someone from coming near or harming)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Leave no stone unturned",
+      "meaning": "कोई कसर न छोड़ना (Try every possible course of action)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Make ends meet",
+      "meaning": "गुजारा करना (Earn just enough money to live on)",
+      "important": false
+    },
+    {
+      "day": "Day 3",
+      "type": "Idiom",
+      "word": "Nip in the bud",
+      "meaning": "शुरुआत में ही नष्ट कर देना (Stop something at an early stage)",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Alleviate",
+      "meaning": "कम करना / राहत देना | Syn: Mitigate, Relieve | Ant: Aggravate, Worsen",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Capricious",
+      "meaning": "मनमौजी / अस्थिर | Syn: Fickle, Whimsical | Ant: Constant, Steadfast",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Deleterious",
+      "meaning": "हानिकारक | Syn: Harmful, Detrimental | Ant: Beneficial, Salutary",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Enigma",
+      "meaning": "पहेली / रहस्य | Syn: Mystery, Riddle | Ant: Clarity, Solution",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Fortitude",
+      "meaning": "धैर्य / साहस | Syn: Courage, Resilience | Ant: Cowardice, Timidity",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Imminent",
+      "meaning": "आसन्न / निकट | Syn: Impending, Approaching | Ant: Distant, Remote",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Lucid",
+      "meaning": "स्पष्ट / सुबोध | Syn: Clear, Coherent | Ant: Obscure, Ambiguous",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Obstinate",
+      "meaning": "जिद्दी / हठी | Syn: Stubborn, Adamant | Ant: Compliant, Flexible",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Pernicious",
+      "meaning": "घातक / विनाशकारी | Syn: Destructive, Ruinous | Ant: Beneficial, Harmless",
+      "important": true
+    },
+    {
+      "day": "Day 3",
+      "type": "Syn/Ant",
+      "word": "Venerate",
+      "meaning": "सम्मान करना / पूजना | Syn: Revere, Respect | Ant: Despise, Scorn",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Fatalist",
+      "meaning": "भाग्यवादी (One who believes that all events are predetermined by fate)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Fugitive",
+      "meaning": "भगोड़ा (One who runs away from justice or the law)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Glutton",
+      "meaning": "पेटू (One who eats excessively)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Gullible",
+      "meaning": "भोला / आसानी से धोखा खाने वाला (Easily persuaded to believe something)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Heretic",
+      "meaning": "विधर्मी (A person holding an opinion at odds with orthodox religious beliefs)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Honorary",
+      "meaning": "अवैतनिक (Holding an office or title without receiving any pay)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Hypochondriac",
+      "meaning": "रोगभ्रमी (A person abnormally anxious about their health)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Iconoclast",
+      "meaning": "मूर्तिभंजक / रूढ़िविरोधी (A person who attacks cherished beliefs or institutions)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Illegible",
+      "meaning": "अपठनीय (Handwriting that is difficult or impossible to read)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "OWS",
+      "word": "Incorrigible",
+      "meaning": "असुधार्य (Not able to be corrected, improved, or reformed)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Off the cuff",
+      "meaning": "बिना पूर्व तैयारी के (Without preparation; spontaneously)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "On cloud nine",
+      "meaning": "अत्यंत प्रसन्न होना (Extremely happy and elated)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Out of the blue",
+      "meaning": "अचानक / अप्रत्याशित रूप से (Unexpectedly; without warning)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Part and parcel",
+      "meaning": "अभिन्न अंग (An essential or integral component)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Pull someone's leg",
+      "meaning": "मज़ाक करना / टांग खींचना (Tease someone playfully)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Read between the lines",
+      "meaning": "छिपा हुआ अर्थ समझना (Understand the hidden or implicit meaning)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "See eye to eye",
+      "meaning": "पूरी तरह सहमत होना (Agree completely with someone)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Spill the beans",
+      "meaning": "राज़ खोल देना (Reveal a secret unintentionally or prematurely)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Turn a deaf ear",
+      "meaning": "अनसुना करना (Refuse to listen or pay attention)",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Idiom",
+      "word": "Wild goose chase",
+      "meaning": "निरर्थक प्रयास (A foolish and hopeless search for something unattainable)",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Ameliorate",
+      "meaning": "सुधारना / बेहतर बनाना | Syn: Improve, Enhance | Ant: Worsen, Aggravate",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Benevolence",
+      "meaning": "परोपकार / दयालुता | Syn: Kindness, Generosity | Ant: Malevolence, Cruelty",
+      "important": false
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Clandestine",
+      "meaning": "गुप्त / छिपा हुआ | Syn: Secret, Covert | Ant: Open, Overt",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Dexterity",
+      "meaning": "निपुणता / कुशलता | Syn: Skill, Agility | Ant: Clumsiness, Ineptitude",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Ebullient",
+      "meaning": "उत्साही / जोशीला | Syn: Enthusiastic, Exuberant | Ant: Depressed, Apathetic",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Haughty",
+      "meaning": "घमंडी / अभिमानी | Syn: Arrogant, Conceited | Ant: Humble, Modest",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Incessant",
+      "meaning": "निरंतर / लगातार | Syn: Unceasing, Continuous | Ant: Intermittent, Sporadic",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Magnanimous",
+      "meaning": "उदार / महान हृदय वाला | Syn: Generous, Noble | Ant: Petty, Mean",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Taciturn",
+      "meaning": "अल्पभाषी / कम बोलने वाला | Syn: Reticent, Reserved | Ant: Garrulous, Talkative",
+      "important": true
+    },
+    {
+      "day": "Day 4",
+      "type": "Syn/Ant",
+      "word": "Ubiquitous",
+      "meaning": "सर्वव्यापी (हर जगह मौजूद) | Syn: Omnipresent, Pervasive | Ant: Rare, Scarce",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Inevitable",
+      "meaning": "अपरिहार्य / अटल (Certain to happen; unavoidable)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Infallible",
+      "meaning": "अचूक / जो कभी गलती न करे (Incapable of making mistakes or being wrong)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Introvert",
+      "meaning": "अंतर्मुखी (A shy, reticent person focused on internal thoughts)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Itinerant",
+      "meaning": "भ्रमणकारी / घुमक्कड़ (Travelling from place to place)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Kleptomania",
+      "meaning": "चोरी करने की बीमारी (A recurrent urge to steal without need)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Loquacious",
+      "meaning": "बातूनी (Tending to talk a great deal; talkative)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Mercenary",
+      "meaning": "भाड़े का सैनिक / स्वार्थी (Primarily concerned with making money at the expense of ethics)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Misanthrope",
+      "meaning": "मानवद्वेषी (A person who dislikes humankind and avoids human society)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Misogynist",
+      "meaning": "स्त्री-द्वेषी (A person who dislikes or is prejudiced against women)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "OWS",
+      "word": "Novice",
+      "meaning": "नौसिखिया (A person new to and inexperienced in a job or situation)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "A white elephant",
+      "meaning": "महंगी पर बेकार वस्तु (A costly but useless possession)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "At daggers drawn",
+      "meaning": "कट्टर दुश्मनी होना (Bitterly hostile towards each other)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Blow one's own trumpet",
+      "meaning": "अपने मुँह मियाँ मिट्ठू बनना (Boast about one's own achievements)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Bury the hatchet",
+      "meaning": "पुरानी दुश्मनी भुलाकर शांति करना (End a conflict and make peace)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Crocodile tears",
+      "meaning": "दिखावटी आँसू (False or insincere display of grief)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Fair-weather friend",
+      "meaning": "मतलबी दोस्त (A friend who deserts you in difficult times)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "In black and white",
+      "meaning": "लिखित रूप में (In writing or print)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Lion's share",
+      "meaning": "सबसे बड़ा हिस्सा (The largest or best part of something)",
+      "important": false
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Red-letter day",
+      "meaning": "अत्यंत महत्वपूर्ण व शुभ दिन (A memorable and joyful day)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Idiom",
+      "word": "Through thick and thin",
+      "meaning": "हर सुख-दुख में (Under all circumstances, no matter how difficult)",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Acumen",
+      "meaning": "कुशाग्र बुद्धि / सूझबूझ | Syn: Shrewdness, Insight | Ant: Stupidity, Ignorance",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Boisterous",
+      "meaning": "कोलाहलपूर्ण / ऊधमी | Syn: Noisy, Clamorous | Ant: Calm, Peaceful",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Cogent",
+      "meaning": "ठोस / प्रभावशाली | Syn: Convincing, Compelling | Ant: Weak, Unconvincing",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Diffident",
+      "meaning": "संकोची / आत्मविश्वासहीन | Syn: Shy, Timid | Ant: Confident, Bold",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Enervate",
+      "meaning": "कमज़ोर करना | Syn: Weaken, Exhaust | Ant: Energize, Invigorate",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Mitigate",
+      "meaning": "कम करना / शांत करना | Syn: Alleviate, Lessen | Ant: Aggravate, Intensify",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Parsimonious",
+      "meaning": "कंजूस / मितव्ययी | Syn: Miserly, Stingy | Ant: Generous, Lavish",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Sagacious",
+      "meaning": "बुद्धिमान / दूरदर्शी | Syn: Wise, Astute | Ant: Foolish, Naive",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Superfluous",
+      "meaning": "अनावश्यक / फालतू | Syn: Redundant, Excessive | Ant: Necessary, Essential",
+      "important": true
+    },
+    {
+      "day": "Day 5",
+      "type": "Syn/Ant",
+      "word": "Zealous",
+      "meaning": "उत्साही / जोशीला | Syn: Enthusiastic, Fervent | Ant: Apathetic, Indifferent",
+      "important": true
+    }
+  ],
+  "passages": [
+    {
+      "day": "Day 1",
+      "title": "Urban Libraries & Focused Preparation",
+      "text": "In recent years, urban libraries have quietly transformed from mere repositories of dusty books into vibrant hubs of focused learning. With the rise of remote work and competitive examinations, young aspirants increasingly seek distraction-free environments outside their homes. Libraries offer not only silence and high-speed internet, but also a subtle psychological advantage: seeing peers engrossed in study fosters discipline and accountability. However, merely occupying a desk for long hours does not guarantee success; structured planning, periodic revision, and active recall remain the true pillars of retention.",
+      "questions": [
+        {
+          "q": "What is the primary reason young aspirants are turning to urban libraries?",
+          "opts": [
+            "To borrow rare dusty books",
+            "To find distraction-free environments for focused learning",
+            "To socialize with friends",
+            "To avoid buying books"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "According to the passage, what psychological benefit does studying in a library provide?",
+          "opts": [
+            "Reduces exam syllabus",
+            "Seeing peers study fosters discipline and accountability",
+            "Guarantees selection automatically",
+            "Eliminates need for revision"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Which word in the passage is closest in meaning to 'absorbed' or 'deeply engaged'?",
+          "opts": [
+            "Repositories",
+            "Fosters",
+            "Engrossed",
+            "Retention"
+          ],
+          "ans": 2
+        }
+      ]
+    },
+    {
+      "day": "Day 2",
+      "title": "Digital Public Infrastructure in India",
+      "text": "Digital public infrastructure has fundamentally reshaped financial inclusion across India. By linking biometric identity with real-time payment rails, millions of citizens in rural and semi-urban regions have gained seamless access to formal banking and direct benefit transfers. Beyond convenience, this architecture has reduced leakages in welfare delivery and empowered small street vendors to build verifiable digital transaction histories, thereby unlocking affordable formal credit. However, sustained digital literacy campaigns and robust cybersecurity frameworks remain indispensable to protect first-time users from online fraud.",
+      "questions": [
+        {
+          "q": "How has digital public infrastructure helped small street vendors?",
+          "opts": [
+            "By giving them free smartphones",
+            "By enabling verifiable digital transaction histories for affordable formal credit",
+            "By exempting them from all taxes",
+            "By closing rural banks"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "What two measures are described as indispensable for protecting first-time users?",
+          "opts": [
+            "Free internet and cashbacks",
+            "Digital literacy campaigns and robust cybersecurity frameworks",
+            "New bank branches and paper passbooks",
+            "Higher interest rates"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Find a word in the passage that means 'smooth and without interruption'.",
+          "opts": [
+            "Biometric",
+            "Leakages",
+            "Seamless",
+            "Indispensable"
+          ],
+          "ans": 2
+        }
+      ]
+    },
+    {
+      "day": "Day 3",
+      "title": "Renewable Energy Transition & Grid Stability",
+      "text": "As nations accelerate their transition toward solar and wind power, maintaining electrical grid stability has emerged as a critical engineering priority. Unlike conventional thermal plants that generate steady baseload electricity, renewable sources fluctuate with weather and daylight. Consequently, energy storage technologies—particularly utility-scale lithium-ion batteries and pumped hydro storage—are becoming indispensable. Modernizing transmission networks with smart sensors and predictive load balancing ensures uninterrupted power supply while curbing carbon emissions.",
+      "questions": [
+        {
+          "q": "Why do renewable energy sources create challenges for electrical grid stability?",
+          "opts": [
+            "They are too expensive to build",
+            "They fluctuate with weather and daylight unlike steady thermal plants",
+            "They produce excess carbon emissions",
+            "They cannot be connected to smart sensors"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Which technologies are mentioned as indispensable for storing renewable energy?",
+          "opts": [
+            "Diesel generators and coal reserves",
+            "Utility-scale lithium-ion batteries and pumped hydro storage",
+            "Nuclear reactors",
+            "Wind turbines alone"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "What does the word 'curbing' in the last sentence mean?",
+          "opts": [
+            "Increasing",
+            "Restraining or reducing",
+            "Ignoring",
+            "Exporting"
+          ],
+          "ans": 1
+        }
+      ]
+    },
+    {
+      "day": "Day 4",
+      "title": "Urban Green Spaces & Heat Island Mitigation",
+      "text": "Urban green spaces, such as public parks and tree-lined avenues, play a vital role in mitigating the urban heat island effect. Dense concrete structures absorb and re-emit solar radiation, causing city temperatures to remain significantly higher than surrounding rural areas. Vegetation cools the environment naturally through shade and evapotranspiration while simultaneously filtering airborne pollutants. Beyond ecological benefits, accessible green zones foster community interaction and alleviate mental fatigue among city dwellers.",
+      "questions": [
+        {
+          "q": "Why do cities experience higher temperatures than surrounding rural areas?",
+          "opts": [
+            "Because of fewer streetlights",
+            "Dense concrete structures absorb and re-emit solar radiation",
+            "Lack of wind turbines",
+            "Higher rainfall in cities"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "How does vegetation cool the urban environment naturally?",
+          "opts": [
+            "Through artificial sprinklers",
+            "Through shade and evapotranspiration",
+            "By reflecting sunlight into space",
+            "By blocking all winds"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Which word in the passage means 'reducing the severity of'?",
+          "opts": [
+            "Absorb",
+            "Mitigating",
+            "Dwellers",
+            "Simultaneously"
+          ],
+          "ans": 1
+        }
+      ]
+    },
+    {
+      "day": "Day 5",
+      "title": "The Power of Spaced Repetition in Exam Prep",
+      "text": "Cognitive psychology demonstrates that human memory decays rapidly unless newly acquired information is reviewed at strategic intervals—a phenomenon known as the forgetting curve. Passive rereading of notes often creates an illusion of competence without strengthening neural pathways. In contrast, active recall combined with spaced repetition forces the brain to retrieve facts from memory, significantly enhancing long-term retention. For aspirants juggling full-time jobs alongside competitive exam preparation, short daily recall drills yield far superior results than infrequent marathon cramming sessions.",
+      "questions": [
+        {
+          "q": "Why is passive rereading considered less effective according to the passage?",
+          "opts": [
+            "It takes too much paper",
+            "It creates an illusion of competence without strengthening neural pathways",
+            "It is only useful for mathematics",
+            "It causes eye strain immediately"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "What study strategy is recommended for aspirants managing full-time jobs?",
+          "opts": [
+            "Infrequent marathon cramming sessions",
+            "Short daily active recall drills with spaced repetition",
+            "Skipping revision altogether",
+            "Reading only once before the exam"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Find a word in the passage that means 'to recover or bring back stored information'.",
+          "opts": [
+            "Decays",
+            "Retrieve",
+            "Illusion",
+            "Juggling"
+          ],
+          "ans": 1
+        }
+      ]
+    }
+  ]
+}

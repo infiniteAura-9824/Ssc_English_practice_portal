@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data:; base-uri 'self'; form-action 'none';">
+<meta name="referrer" content="no-referrer">
+<title>SSC English Mastery — Daily Vocab, Tests & Analysis</title>
+<style>
+  :root {
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --text: #0f172a;
+    --text-sub: #475569;
+    --border: #cbd5e1;
+    --primary: #1d4ed8;
+    --primary-bg: #dbeafe;
+    --header-grad: linear-gradient(135deg, #0f172a, #1e3a8a);
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+    --amber: #d97706;
+    --amber-bg: #fef3c7;
+    --shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  }
+
+  body.dark {
+    --bg: #0b1120;
+    --surface: #1e293b;
+    --surface-alt: #0f172a;
+    --text: #f1f5f9;
+    --text-sub: #94a3b8;
+    --border: #334155;
+    --primary: #60a5fa;
+    --primary-bg: rgba(59, 130, 246, 0.18);
+    --header-grad: linear-gradient(135deg, #020617, #1e293b);
+    --green: #4ade80;
+    --green-bg: rgba(34, 197, 94, 0.18);
+    --red: #f87171;
+    --red-bg: rgba(239, 68, 68, 0.18);
+    --amber: #fbbf24;
+    --amber-bg: rgba(245, 158, 11, 0.18);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+  body { background: var(--bg); color: var(--text); padding-bottom: 84px; transition: background 0.2s, color 0.2s; line-height: 1.45; }
+
+  /* Sticky Top Header */
+  .app-header { background: var(--header-grad); color: #fff; padding: 14px 16px; position: sticky; top: 0; z-index: 40; box-shadow: 0 3px 12px rgba(0,0,0,0.18); }
+  .header-row { max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .app-title { font-size: 1.15rem; font-weight: 800; letter-spacing: 0.2px; user-select: none; cursor: pointer; }
+  .app-sub { font-size: 0.76rem; color: #cbd5e1; margin-top: 2px; }
+  .header-actions { display: flex; gap: 6px; align-items: center; }
+  .icon-pill { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 7px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .admin-badge { display: none; background: #f59e0b; color: #0f172a; border: none; padding: 7px 11px; border-radius: 999px; font-size: 0.78rem; font-weight: 800; cursor: pointer; }
+
+  .container { max-width: 820px; margin: 14px auto; padding: 0 12px; }
+
+  /* Guide Banner */
+  .guide-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; box-shadow: var(--shadow); font-size: 0.85rem; }
+  .guide-title { font-weight: 800; color: var(--amber); margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+
+  /* Controls & Filters */
+  .filter-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  select, input[type="text"], input[type="password"], textarea { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 9px; background: var(--surface-alt); color: var(--text); font-size: 0.92rem; outline: none; }
+  .toggle-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+  /* Mobile-First Vocab Cards */
+  .v-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 15px; margin-bottom: 10px; box-shadow: var(--shadow); }
+  .v-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .v-badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .pill { padding: 3px 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 800; }
+  .p-day { background: var(--surface-alt); border: 1px solid var(--border); color: var(--text-sub); }
+  .p-ows { background: var(--primary-bg); color: var(--primary); }
+  .p-idiom { background: var(--amber-bg); color: var(--amber); }
+  .p-syn { background: var(--green-bg); color: var(--green); }
+
+  .v-tools { display: flex; gap: 6px; align-items: center; }
+  .tool-btn { background: var(--surface-alt); border: 1px solid var(--border); color: var(--text); width: 34px; height: 34px; border-radius: 8px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .star-active { color: #f59e0b !important; border-color: #f59e0b; background: var(--amber-bg); }
+
+  .v-word { font-size: 1.15rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+  .v-meaning { font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
+  .v-meaning.blurred { filter: blur(6px); user-select: none; cursor: pointer; background: var(--surface-alt); border-radius: 6px; padding: 2px 6px; }
+
+  /* Buttons */
+  .btn { padding: 10px 14px; border: none; border-radius: 9px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+  .btn-primary { background: #2563eb; color: #fff; }
+  .btn-green { background: #16a34a; color: #fff; }
+  .btn-amber { background: #d97706; color: #fff; }
+  .btn-red { background: #dc2626; color: #fff; }
+  .btn-ghost { background: var(--surface-alt); border: 1.5px solid var(--border); color: var(--text); }
+
+  /* Quiz Cards */
+  .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 15px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .q-card.ok { border-left: 5px solid #16a34a; }
+  .q-card.bad { border-left: 5px solid #dc2626; }
+  .q-meta { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-sub); font-weight: 700; margin-bottom: 6px; }
+  .q-title { font-size: 1rem; font-weight: 700; margin-bottom: 11px; }
+  .opt-list { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .opt-btn { text-align: left; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 9px; background: var(--surface-alt); color: var(--text); font-size: 0.92rem; cursor: pointer; display: flex; gap: 9px; align-items: flex-start; }
+  .opt-btn.selected { border-color: #2563eb; background: var(--primary-bg); color: var(--primary); font-weight: 700; }
+  .opt-btn.correct { border-color: #16a34a !important; background: var(--green-bg) !important; color: var(--green) !important; font-weight: 700; }
+  .opt-btn.wrong { border-color: #dc2626 !important; background: var(--red-bg) !important; color: var(--red) !important; }
+  .sol-note { display: none; margin-top: 10px; padding: 9px 11px; border-radius: 8px; font-size: 0.88rem; }
+  .sol-note.show { display: block; }
+  .sol-note.ok { background: var(--green-bg); color: var(--green); }
+  .sol-note.bad { background: var(--red-bg); color: var(--red); }
+
+  /* Passage */
+  .passage-text { background: var(--surface-alt); border-left: 4px solid #0d9488; padding: 13px; border-radius: 8px; font-size: 0.96rem; line-height: 1.65; margin-bottom: 12px; }
+
+  /* Analysis KPIs */
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .kpi-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; box-shadow: var(--shadow); }
+  .kpi-num { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+  .kpi-lbl { font-size: 0.78rem; color: var(--text-sub); font-weight: 700; margin-top: 2px; }
+  .bar-track { height: 11px; background: var(--surface-alt); border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin: 5px 0 12px 0; }
+  .bar-fill { height: 100%; background: #16a34a; }
+  .weak-chip { display: inline-block; background: var(--red-bg); color: var(--red); padding: 5px 10px; border-radius: 8px; font-size: 0.84rem; font-weight: 700; margin: 4px 4px 0 0; }
+
+  /* Bottom Mobile App Navigation Bar */
+  .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1.5px solid var(--border); display: flex; justify-content: space-around; padding: 6px 4px; z-index: 50; box-shadow: 0 -2px 12px rgba(0,0,0,0.08); }
+  .b-tab { flex: 1; background: none; border: none; color: var(--text-sub); display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 0.72rem; font-weight: 700; padding: 4px 2px; cursor: pointer; border-radius: 8px; }
+  .b-tab .ico { font-size: 1.2rem; }
+  .b-tab.active { color: var(--primary); background: var(--primary-bg); }
+
+  /* Modal */
+  .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.68); z-index: 100; padding: 14px; align-items: center; justify-content: center; }
+  .modal-bg.open { display: flex; }
+  .modal-card { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 14px; max-width: 540px; width: 100%; padding: 18px; max-height: 90vh; overflow-y: auto; }
+  .field-lbl { font-size: 0.8rem; font-weight: 700; color: var(--text-sub); margin: 8px 0 4px 0; display: block; }
+  .sec-pill { display: inline-block; background: var(--green-bg); color: var(--green); font-size: 0.74rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<!-- TOP HEADER (Zero Public Admin Controls) -->
+<header class="app-header">
+  <div class="header-row">
+    <div>
+      <div class="app-title" id="secret-admin-trigger">SSC English Mastery</div>
+      <div class="app-sub" id="sync-lbl">5 Days Loaded • 150 PYQ Words</div>
+    </div>
+    <div class="header-actions">
+      <button class="admin-badge" id="admin-pill-btn" onclick="openModal('admin-modal')">Admin Vault</button>
+      <button class="icon-pill" id="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- STUDENT STUDY GUIDE BANNER -->
+  <div class="guide-box" id="guide-box">
+    <div class="guide-title">
+      <span>Daily English Revision &amp; Practice Guide</span>
+      <button onclick="document.getElementById('guide-box').style.display='none'" style="background:none;border:none;color:var(--text-sub);font-weight:800;cursor:pointer;">✕</button>
+    </div>
+    <div style="color:var(--text-sub);font-size:0.82rem;">
+      <strong>1. Active Recall:</strong> Neeche <strong>"Hide Meanings"</strong> on karein, pehle khud Hindi arth yaad karein, phir card par tap karke check karein.<br>
+      <strong>2. Star &amp; Test:</strong> Important words par <strong>★</strong> lagayein aur neeche <strong>MCQ Test</strong> &amp; <strong>Analysis</strong> tab se apni accuracy check karein.
+    </div>
+  </div>
+
+  <!-- VIEW 1: DAILY VOCAB STUDY -->
+  <section id="view-vocab" class="view-sec">
+    <div class="filter-card">
+      <div class="filter-grid">
+        <select id="sel-day" onchange="renderCards()"></select>
+        <select id="sel-cat" onchange="renderCards()">
+          <option value="ALL">All Types (OWS/Idiom/Syn)</option>
+          <option value="OWS">One-Word (OWS)</option>
+          <option value="Idiom">Idioms &amp; Phrases</option>
+          <option value="Syn/Ant">Synonyms &amp; Antonyms</option>
+        </select>
+      </div>
+      <input type="text" id="inp-search" placeholder="Search English word or Hindi meaning..." oninput="renderCards()">
+      <div class="toggle-row">
+        <button class="btn btn-ghost" id="blur-btn" onclick="toggleBlur()" style="padding:7px 12px;font-size:0.82rem;">👁️ Hide Meanings (Recall Mode)</button>
+        <span id="showing-cnt" style="font-size:0.8rem;font-weight:700;color:var(--text-sub);">Showing 30 words</span>
+      </div>
+    </div>
+    <div id="cards-container"></div>
+  </section>
+
+  <!-- VIEW 2: IMPORTANT / STARRED WORDS -->
+  <section id="view-imp" class="view-sec" style="display:none;">
+    <div class="filter-card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <div>
+        <div style="font-weight:800;font-size:1rem;">Important Words Vault (<span id="imp-total">0</span>)</div>
+        <div style="font-size:0.8rem;color:var(--text-sub);">Starred words + test mein galat hue words</div>
+      </div>
+      <button class="btn btn-amber" onclick="launchTest('IMPORTANT')">Test Important Words &rarr;</button>
+    </div>
+    <div id="imp-container"></div>
+  </section>
+
+  <!-- VIEW 3: LIVE MCQ TEST -->
+  <section id="view-test" class="view-sec" style="display:none;">
+    <div class="filter-card">
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <select id="test-mode" style="flex:1;font-weight:700;">
+          <option value="LATEST">Latest Day Words Test</option>
+          <option value="ALL">All Words Mix (Random 20)</option>
+          <option value="IMPORTANT">Important Words ★ Test</option>
+          <option value="WEAK">Weak / Wrong Words Drill</option>
+        </select>
+        <button class="btn btn-primary" onclick="generateTest()">New Test</button>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-green" style="flex:1;" onclick="submitTest()">Check Score &amp; Save</button>
+        <button class="btn btn-ghost" onclick="clearCurrentTest()">Reset</button>
+      </div>
+      <div id="test-score-bar" style="margin-top:9px;font-weight:800;font-size:0.9rem;"></div>
+    </div>
+    <div id="quiz-container"></div>
+  </section>
+
+  <!-- VIEW 4: READING COMPREHENSION -->
+  <section id="view-rc" class="view-sec" style="display:none;">
+    <div class="filter-card" style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+      <select id="sel-rc-day" onchange="renderRC()" style="flex:1;font-weight:700;"></select>
+      <button class="btn btn-ghost" onclick="changeFontSize(-1)">A-</button>
+      <button class="btn btn-ghost" onclick="changeFontSize(1)">A+</button>
+    </div>
+    <div id="rc-box"></div>
+  </section>
+
+  <!-- VIEW 5: ANALYSIS & WEAK WORDS -->
+  <section id="view-analysis" class="view-sec" style="display:none;">
+    <div class="kpi-grid" id="kpi-area"></div>
+    <div class="filter-card">
+      <div style="font-weight:800;font-size:1rem;margin-bottom:10px;">Category-Wise Accuracy</div>
+      <div id="bars-area"></div>
+    </div>
+    <div class="filter-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+        <div style="font-weight:800;font-size:1rem;">Weak Words (<span id="weak-cnt">0</span>)</div>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-red" onclick="launchTest('WEAK')" style="padding:7px 11px;font-size:0.8rem;">Practice Weak Test</button>
+          <button class="btn btn-ghost" onclick="resetAllStats()" style="padding:7px 11px;font-size:0.8rem;">Reset</button>
+        </div>
+      </div>
+      <div id="weak-area"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- BOTTOM APP NAVIGATION BAR -->
+<nav class="bottom-nav">
+  <button class="b-tab active" onclick="goTab('vocab', this)"><span class="ico">📚</span><span>Vocab</span></button>
+  <button class="b-tab" onclick="goTab('imp', this)"><span class="ico">⭐</span><span>Important</span></button>
+  <button class="b-tab" onclick="goTab('test', this)"><span class="ico">📝</span><span>MCQ Test</span></button>
+  <button class="b-tab" onclick="goTab('rc', this)"><span class="ico">📖</span><span>Passage</span></button>
+  <button class="b-tab" onclick="goTab('analysis', this)"><span class="ico">📊</span><span>Analysis</span></button>
+</nav>
+
+<!-- HARDENED ADMIN AUTH MODAL (Zero Hardcoded PIN in Source + Brute-Force Protection) -->
+<div class="modal-bg" id="pin-modal">
+  <div class="modal-card" style="max-width:380px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <strong id="pin-modal-title">Admin Security Verification</strong>
+      <button onclick="closeModal('pin-modal')" style="background:none;border:none;font-size:1.2rem;color:var(--text);cursor:pointer;">✕</button>
+    </div>
+    <p id="pin-modal-desc" style="font-size:0.82rem;color:var(--text-sub);margin-bottom:10px;"></p>
+    <input type="password" id="admin-pin-input" placeholder="Enter 6+ digit Admin PIN..." inputmode="numeric" autocomplete="off">
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn btn-primary" style="flex:1;" id="pin-submit-btn" onclick="handlePinSubmit()">Verify &amp; Unlock</button>
+      <button class="btn btn-ghost" onclick="closeModal('pin-modal')">Cancel</button>
+    </div>
+    <div id="pin-err" style="color:var(--red);font-size:0.8rem;font-weight:700;margin-top:6px;"></div>
+  </div>
+</div>
+
+<!-- ENCRYPTED ADMIN CONTROL PANEL MODAL -->
+<div class="modal-bg" id="admin-modal">
+  <div class="modal-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <div>
+        <strong style="font-size:1.05rem;color:var(--amber);">Encrypted Admin Vault</strong>
+        <span class="sec-pill">SHA-256 + AES-GCM</span>
+      </div>
+      <button onclick="closeModal('admin-modal')" style="background:none;border:none;font-size:1.2rem;color:var(--text);cursor:pointer;">✕</button>
+    </div>
+
+    <label class="field-lbl">1. Paste Daily 6:00 AM JSON Words Array (Schema-Validated):</label>
+    <textarea id="json-input" rows="4" placeholder='[{"day":"Day 6","type":"OWS","word":"Panacea","meaning":"रामबाण औषधि"}]'></textarea>
+
+    <div style="background:var(--surface-alt);border:1px solid var(--border);border-radius:10px;padding:10px;margin-top:10px;">
+      <strong style="font-size:0.86rem;color:var(--primary);">Live Global Publish Settings (AES-256 Encrypted Storage):</strong>
+      <p style="font-size:0.78rem;color:var(--text-sub);margin:4px 0 8px 0;">
+        Aapka Fine-Grained GitHub Token aapke Admin PIN se <strong>AES-256-GCM</strong> encrypt hokar save hota hai—koi bhi plaintext token nahi padh sakta.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div>
+          <label class="field-lbl">GitHub Username</label>
+          <input type="text" id="gh-owner" value="infiniteAura-9824">
+        </div>
+        <div>
+          <label class="field-lbl">Repository Name</label>
+          <input type="text" id="gh-repo" value="ssc-english-portal">
+        </div>
+      </div>
+      <label class="field-lbl">Fine-Grained GitHub Token (Contents: Read &amp; Write only)</label>
+      <input type="password" id="gh-token" placeholder="github_pat_xxxxxxxxxxxx" autocomplete="off">
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
+      <button class="btn btn-green" onclick="publishLiveToGitHub()">Publish Live to GitHub (All Students)</button>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-primary" style="flex:1;" onclick="saveLocalOnly()">Save Locally Only</button>
+        <button class="btn btn-ghost" onclick="downloadUpdatedJSON()">Backup JSON</button>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-amber" style="flex:1;font-size:0.8rem;padding:7px;" onclick="resetAdminPIN()">Change PIN</button>
+        <button class="btn btn-red" style="flex:1;font-size:0.8rem;padding:7px;" onclick="lockAdmin()">Lock &amp; Wipe Session</button>
+      </div>
+    </div>
+    <div id="admin-status-msg" style="margin-top:9px;font-size:0.83rem;font-weight:700;"></div>
+  </div>
+</div>
+
+<script>
+const BUILTIN_DATA = {"last_updated": "2026-11-18 06:00 AM IST", "day_count": 5, "vocab": [{"day": "Day 1", "type": "OWS", "word": "Altruist", "meaning": "परोपकारी (One who loves and helps mankind without selfishness)", "important": true}, {"day": "Day 1", "type": "OWS", "word": "Amphibian", "meaning": "उभयचर (Animals that live both on land and in water)", "important": false}, {"day": "Day 1", "type": "OWS", "word": "Anarchy", "meaning": "अराजकता (Absence of government and law in a country)", "important": true}, {"day": "Day 1", "type": "OWS", "word": "Apostate", "meaning": "स्वधर्मत्यागी (One who abandons his religious faith or principles)", "important": true}, {"day": "Day 1", "type": "OWS", "word": "Arbitrator", "meaning": "मध्यस्थ (A person appointed by two parties to solve a dispute)", "important": false}, {"day": "Day 1", "type": "OWS", "word": "Ascetic", "meaning": "तपस्वी / संन्यासी (One who practices severe self-discipline)", "important": true}, {"day": "Day 1", "type": "OWS", "word": "Atheist", "meaning": "नास्तिक (One who does not believe in the existence of God)", "important": false}, {"day": "Day 1", "type": "OWS", "word": "Autobiography", "meaning": "आत्मकथा (Life history of a person written by himself)", "important": false}, {"day": "Day 1", "type": "OWS", "word": "Avaricious", "meaning": "लालची (Having an extreme greed for wealth)", "important": true}, {"day": "Day 1", "type": "OWS", "word": "Belligerent", "meaning": "लड़ाकू / युद्धरत (Hostile and aggressive; engaged in war)", "important": true}, {"day": "Day 1", "type": "Idiom", "word": "A blessing in disguise", "meaning": "दुख के भेष में सुख (Something bad at first that results in good)", "important": true}, {"day": "Day 1", "type": "Idiom", "word": "Beat around the bush", "meaning": "घुमा-फिरा कर बात करना (Avoid talking about the main topic)", "important": true}, {"day": "Day 1", "type": "Idiom", "word": "Bite the bullet", "meaning": "मजबूरी में कठिन काम स्वीकार करना (Face a difficult situation bravely)", "important": true}, {"day": "Day 1", "type": "Idiom", "word": "Burn the midnight oil", "meaning": "देर रात तक कड़ी मेहनत/पढ़ाई करना (Work or study late into night)", "important": false}, {"day": "Day 1", "type": "Idiom", "word": "Call it a day", "meaning": "आज का काम समाप्त करना (Stop working on something for the day)", "important": false}, {"day": "Day 1", "type": "Idiom", "word": "Cut corners", "meaning": "पैसे या समय बचाने के लिए लापरवाही करना (Do something poorly to save money/time)", "important": true}, {"day": "Day 1", "type": "Idiom", "word": "Get out of hand", "meaning": "नियंत्रण से बाहर हो जाना (Get out of control)", "important": false}, {"day": "Day 1", "type": "Idiom", "word": "Hit the nail on the head", "meaning": "बिल्कुल सटीक बात कहना (Say or do something exactly right)", "important": false}, {"day": "Day 1", "type": "Idiom", "word": "Once in a blue moon", "meaning": "ईद का चाँद / बहुत ही कम (Happening very rarely)", "important": false}, {"day": "Day 1", "type": "Idiom", "word": "Under the weather", "meaning": "तबीयत ठीक न होना (Feeling slightly ill or unwell)", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Abandon", "meaning": "त्याग देना | Syn: Forsake, Relinquish | Ant: Retain, Keep", "important": false}, {"day": "Day 1", "type": "Syn/Ant", "word": "Abundant", "meaning": "प्रचुर / भरपूर | Syn: Plentiful, Ample | Ant: Scarce, Meager", "important": false}, {"day": "Day 1", "type": "Syn/Ant", "word": "Benevolent", "meaning": "दयालु / परोपकारी | Syn: Kind, Generous | Ant: Malevolent, Cruel", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Candid", "meaning": "स्पष्टवादी / निष्कपट | Syn: Frank, Outspoken | Ant: Devious, Secretive", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Diligent", "meaning": "मेहनती / परिश्रमी | Syn: Industrious, Assiduous | Ant: Lazy, Lethargic", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Ephemeral", "meaning": "क्षणभंगुर / अल्पकालिक | Syn: Transient, Fleeting | Ant: Permanent, Eternal", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Frugal", "meaning": "मितव्ययी (कम खर्च करने वाला) | Syn: Thrifty, Economical | Ant: Extravagant, Lavish", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Gregarious", "meaning": "मिलनसार | Syn: Sociable, Outgoing | Ant: Introverted, Reclusive", "important": true}, {"day": "Day 1", "type": "Syn/Ant", "word": "Hostile", "meaning": "शत्रुतापूर्ण | Syn: Antagonistic, Unfriendly | Ant: Friendly, Cordial", "important": false}, {"day": "Day 1", "type": "Syn/Ant", "word": "Meticulous", "meaning": "अति सावधान / सूक्ष्म | Syn: Thorough, Precise | Ant: Careless, Sloppy", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Bibliophile", "meaning": "पुस्तक प्रेमी (One who loves and collects books)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Blasphemy", "meaning": "ईशनिंदा (Speaking irreverently about God or sacred things)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Bohemian", "meaning": "रूढ़िमुक्त कलाकार (Unconventional person not following social norms)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Cacophony", "meaning": "कर्कश ध्वनि (Harsh, discordant mixture of sounds)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Calligraphy", "meaning": "सुलेखन (The art of beautiful handwriting)", "important": false}, {"day": "Day 2", "type": "OWS", "word": "Cannibal", "meaning": "नरभक्षी (One who eats human flesh)", "important": false}, {"day": "Day 2", "type": "OWS", "word": "Carnivorous", "meaning": "मांसाहारी (Animals that feed on flesh)", "important": false}, {"day": "Day 2", "type": "OWS", "word": "Chauvinist", "meaning": "अंधदेशभक्त / कट्टर (Exaggerated or aggressive patriotism)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Claustrophobia", "meaning": "बंद जगह का डर (Extreme fear of confined or small spaces)", "important": true}, {"day": "Day 2", "type": "OWS", "word": "Connoisseur", "meaning": "कला या स्वाद का पारखी (An expert judge in matters of taste or art)", "important": true}, {"day": "Day 2", "type": "Idiom", "word": "Add fuel to the fire", "meaning": "आग में घी डालना (Make a bad situation worse)", "important": false}, {"day": "Day 2", "type": "Idiom", "word": "At the eleventh hour", "meaning": "अंतिम समय में (At the very last moment)", "important": true}, {"day": "Day 2", "type": "Idiom", "word": "Back to the drawing board", "meaning": "नए सिरे से शुरुआत करना (Start planning all over again after failure)", "important": true}, {"day": "Day 2", "type": "Idiom", "word": "Barking up the wrong tree", "meaning": "गलत दिशा में प्रयास करना (Accusing or pursuing the wrong course)", "important": true}, {"day": "Day 2", "type": "Idiom", "word": "Bolt from the blue", "meaning": "आकस्मिक विपत्ति (A complete and unexpected surprise)", "important": true}, {"day": "Day 2", "type": "Idiom", "word": "Break the ice", "meaning": "चुप्पी तोड़ना / बातचीत शुरू करना (Initiate social interaction)", "important": false}, {"day": "Day 2", "type": "Idiom", "word": "By leaps and bounds", "meaning": "दिन दूनी रात चौगुनी (Very rapidly)", "important": false}, {"day": "Day 2", "type": "Idiom", "word": "Costs an arm and a leg", "meaning": "बहुत महंगा होना (Extremely expensive)", "important": false}, {"day": "Day 2", "type": "Idiom", "word": "Cry over spilt milk", "meaning": "व्यर्थ पछताना (Complain about a loss from the past)", "important": false}, {"day": "Day 2", "type": "Idiom", "word": "Devil's advocate", "meaning": "बहस के लिए विपरीत तर्क देने वाला (Argues against something to test validity)", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Adversity", "meaning": "विपत्ति / कठिनाई | Syn: Misfortune, Hardship | Ant: Prosperity, Fortune", "important": false}, {"day": "Day 2", "type": "Syn/Ant", "word": "Audacious", "meaning": "निडर / दुस्साहसी | Syn: Bold, Daring | Ant: Timid, Cowardly", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Callous", "meaning": "कठोर / संवेदनहीन | Syn: Heartless, Insensitive | Ant: Compassionate, Kind", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Dilapidated", "meaning": "जर्जर / टूटा-फूटा | Syn: Ruined, Ramshackle | Ant: Intact, Restored", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Emulate", "meaning": "अनुकरण करना / बराबरी करना | Syn: Imitate, Mimic | Ant: Neglect, Ignore", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Fastidious", "meaning": "नकचढ़ा / अति सूक्ष्मदर्शी | Syn: Meticulous, Finicky | Ant: Careless, Easygoing", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Garrulous", "meaning": "बातूनी | Syn: Talkative, Loquacious | Ant: Taciturn, Reticent", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Impeccable", "meaning": "त्रुटिहीन / निर्दोष | Syn: Flawless, Faultless | Ant: Defective, Imperfect", "important": true}, {"day": "Day 2", "type": "Syn/Ant", "word": "Lethargic", "meaning": "सुस्त / आलसी | Syn: Sluggish, Inactive | Ant: Energetic, Vigorous", "important": false}, {"day": "Day 2", "type": "Syn/Ant", "word": "Pragmatic", "meaning": "व्यावहारिक | Syn: Practical, Realistic | Ant: Idealistic, Impractical", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Demagogue", "meaning": "जनोत्तेजक नेता (A political leader who seeks support by appealing to popular desires)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Eccentric", "meaning": "सनकी / विचित्र (Unconventional and slightly strange person)", "important": false}, {"day": "Day 3", "type": "OWS", "word": "Egoist", "meaning": "अहंवादी / स्वार्थी (A person who is excessively conceited or self-centered)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Elegy", "meaning": "शोकगीत (A poem of serious reflection, typically a lament for the dead)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Embezzlement", "meaning": "गबन / हेराफेरी (Theft or misappropriation of funds placed in one's trust)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Epitaph", "meaning": "समाधि-लेख (Words inscribed on a tomb in memory of the person buried)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Etymology", "meaning": "शब्द-व्युत्पत्ति शास्त्र (The study of the origin and history of words)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Exonerate", "meaning": "दोषमुक्त करना (Absolve someone from blame for a fault or wrongdoing)", "important": true}, {"day": "Day 3", "type": "OWS", "word": "Extravagant", "meaning": "फिजूलखर्च (Lacking restraint in spending money or using resources)", "important": false}, {"day": "Day 3", "type": "OWS", "word": "Fanatic", "meaning": "कट्टरपंथी (A person filled with excessive and single-minded zeal)", "important": true}, {"day": "Day 3", "type": "Idiom", "word": "Face the music", "meaning": "किए का परिणाम भुगतना (Accept unpleasant consequences of one's actions)", "important": true}, {"day": "Day 3", "type": "Idiom", "word": "Feather in one's cap", "meaning": "गौरवपूर्ण उपलब्धि (An achievement to be proud of)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "Fit as a fiddle", "meaning": "पूरी तरह स्वस्थ (In very good health and physical condition)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "Gift of the gab", "meaning": "वाक्पटुता / बोलने की कला (Ability to speak fluently and persuasively)", "important": true}, {"day": "Day 3", "type": "Idiom", "word": "Herculean task", "meaning": "अत्यंत कठिन कार्य (A task requiring huge effort or strength)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "In hot water", "meaning": "मुसीबत में पड़ना (In trouble or difficulty)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "Keep at bay", "meaning": "दूर रखना (Prevent something/someone from coming near or harming)", "important": true}, {"day": "Day 3", "type": "Idiom", "word": "Leave no stone unturned", "meaning": "कोई कसर न छोड़ना (Try every possible course of action)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "Make ends meet", "meaning": "गुजारा करना (Earn just enough money to live on)", "important": false}, {"day": "Day 3", "type": "Idiom", "word": "Nip in the bud", "meaning": "शुरुआत में ही नष्ट कर देना (Stop something at an early stage)", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Alleviate", "meaning": "कम करना / राहत देना | Syn: Mitigate, Relieve | Ant: Aggravate, Worsen", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Capricious", "meaning": "मनमौजी / अस्थिर | Syn: Fickle, Whimsical | Ant: Constant, Steadfast", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Deleterious", "meaning": "हानिकारक | Syn: Harmful, Detrimental | Ant: Beneficial, Salutary", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Enigma", "meaning": "पहेली / रहस्य | Syn: Mystery, Riddle | Ant: Clarity, Solution", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Fortitude", "meaning": "धैर्य / साहस | Syn: Courage, Resilience | Ant: Cowardice, Timidity", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Imminent", "meaning": "आसन्न / निकट | Syn: Impending, Approaching | Ant: Distant, Remote", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Lucid", "meaning": "स्पष्ट / सुबोध | Syn: Clear, Coherent | Ant: Obscure, Ambiguous", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Obstinate", "meaning": "जिद्दी / हठी | Syn: Stubborn, Adamant | Ant: Compliant, Flexible", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Pernicious", "meaning": "घातक / विनाशकारी | Syn: Destructive, Ruinous | Ant: Beneficial, Harmless", "important": true}, {"day": "Day 3", "type": "Syn/Ant", "word": "Venerate", "meaning": "सम्मान करना / पूजना | Syn: Revere, Respect | Ant: Despise, Scorn", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Fatalist", "meaning": "भाग्यवादी (One who believes that all events are predetermined by fate)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Fugitive", "meaning": "भगोड़ा (One who runs away from justice or the law)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Glutton", "meaning": "पेटू (One who eats excessively)", "important": false}, {"day": "Day 4", "type": "OWS", "word": "Gullible", "meaning": "भोला / आसानी से धोखा खाने वाला (Easily persuaded to believe something)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Heretic", "meaning": "विधर्मी (A person holding an opinion at odds with orthodox religious beliefs)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Honorary", "meaning": "अवैतनिक (Holding an office or title without receiving any pay)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Hypochondriac", "meaning": "रोगभ्रमी (A person abnormally anxious about their health)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Iconoclast", "meaning": "मूर्तिभंजक / रूढ़िविरोधी (A person who attacks cherished beliefs or institutions)", "important": true}, {"day": "Day 4", "type": "OWS", "word": "Illegible", "meaning": "अपठनीय (Handwriting that is difficult or impossible to read)", "important": false}, {"day": "Day 4", "type": "OWS", "word": "Incorrigible", "meaning": "असुधार्य (Not able to be corrected, improved, or reformed)", "important": true}, {"day": "Day 4", "type": "Idiom", "word": "Off the cuff", "meaning": "बिना पूर्व तैयारी के (Without preparation; spontaneously)", "important": true}, {"day": "Day 4", "type": "Idiom", "word": "On cloud nine", "meaning": "अत्यंत प्रसन्न होना (Extremely happy and elated)", "important": false}, {"day": "Day 4", "type": "Idiom", "word": "Out of the blue", "meaning": "अचानक / अप्रत्याशित रूप से (Unexpectedly; without warning)", "important": false}, {"day": "Day 4", "type": "Idiom", "word": "Part and parcel", "meaning": "अभिन्न अंग (An essential or integral component)", "important": true}, {"day": "Day 4", "type": "Idiom", "word": "Pull someone's leg", "meaning": "मज़ाक करना / टांग खींचना (Tease someone playfully)", "important": false}, {"day": "Day 4", "type": "Idiom", "word": "Read between the lines", "meaning": "छिपा हुआ अर्थ समझना (Understand the hidden or implicit meaning)", "important": true}, {"day": "Day 4", "type": "Idiom", "word": "See eye to eye", "meaning": "पूरी तरह सहमत होना (Agree completely with someone)", "important": false}, {"day": "Day 4", "type": "Idiom", "word": "Spill the beans", "meaning": "राज़ खोल देना (Reveal a secret unintentionally or prematurely)", "important": true}, {"day": "Day 4", "type": "Idiom", "word": "Turn a deaf ear", "meaning": "अनसुना करना (Refuse to listen or pay attention)", "important": false}, {"day": "Day 4", "type": "Idiom", "word": "Wild goose chase", "meaning": "निरर्थक प्रयास (A foolish and hopeless search for something unattainable)", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Ameliorate", "meaning": "सुधारना / बेहतर बनाना | Syn: Improve, Enhance | Ant: Worsen, Aggravate", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Benevolence", "meaning": "परोपकार / दयालुता | Syn: Kindness, Generosity | Ant: Malevolence, Cruelty", "important": false}, {"day": "Day 4", "type": "Syn/Ant", "word": "Clandestine", "meaning": "गुप्त / छिपा हुआ | Syn: Secret, Covert | Ant: Open, Overt", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Dexterity", "meaning": "निपुणता / कुशलता | Syn: Skill, Agility | Ant: Clumsiness, Ineptitude", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Ebullient", "meaning": "उत्साही / जोशीला | Syn: Enthusiastic, Exuberant | Ant: Depressed, Apathetic", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Haughty", "meaning": "घमंडी / अभिमानी | Syn: Arrogant, Conceited | Ant: Humble, Modest", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Incessant", "meaning": "निरंतर / लगातार | Syn: Unceasing, Continuous | Ant: Intermittent, Sporadic", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Magnanimous", "meaning": "उदार / महान हृदय वाला | Syn: Generous, Noble | Ant: Petty, Mean", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Taciturn", "meaning": "अल्पभाषी / कम बोलने वाला | Syn: Reticent, Reserved | Ant: Garrulous, Talkative", "important": true}, {"day": "Day 4", "type": "Syn/Ant", "word": "Ubiquitous", "meaning": "सर्वव्यापी (हर जगह मौजूद) | Syn: Omnipresent, Pervasive | Ant: Rare, Scarce", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Inevitable", "meaning": "अपरिहार्य / अटल (Certain to happen; unavoidable)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Infallible", "meaning": "अचूक / जो कभी गलती न करे (Incapable of making mistakes or being wrong)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Introvert", "meaning": "अंतर्मुखी (A shy, reticent person focused on internal thoughts)", "important": false}, {"day": "Day 5", "type": "OWS", "word": "Itinerant", "meaning": "भ्रमणकारी / घुमक्कड़ (Travelling from place to place)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Kleptomania", "meaning": "चोरी करने की बीमारी (A recurrent urge to steal without need)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Loquacious", "meaning": "बातूनी (Tending to talk a great deal; talkative)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Mercenary", "meaning": "भाड़े का सैनिक / स्वार्थी (Primarily concerned with making money at the expense of ethics)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Misanthrope", "meaning": "मानवद्वेषी (A person who dislikes humankind and avoids human society)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Misogynist", "meaning": "स्त्री-द्वेषी (A person who dislikes or is prejudiced against women)", "important": true}, {"day": "Day 5", "type": "OWS", "word": "Novice", "meaning": "नौसिखिया (A person new to and inexperienced in a job or situation)", "important": false}, {"day": "Day 5", "type": "Idiom", "word": "A white elephant", "meaning": "महंगी पर बेकार वस्तु (A costly but useless possession)", "important": true}, {"day": "Day 5", "type": "Idiom", "word": "At daggers drawn", "meaning": "कट्टर दुश्मनी होना (Bitterly hostile towards each other)", "important": true}, {"day": "Day 5", "type": "Idiom", "word": "Blow one's own trumpet", "meaning": "अपने मुँह मियाँ मिट्ठू बनना (Boast about one's own achievements)", "important": false}, {"day": "Day 5", "type": "Idiom", "word": "Bury the hatchet", "meaning": "पुरानी दुश्मनी भुलाकर शांति करना (End a conflict and make peace)", "important": true}, {"day": "Day 5", "type": "Idiom", "word": "Crocodile tears", "meaning": "दिखावटी आँसू (False or insincere display of grief)", "important": false}, {"day": "Day 5", "type": "Idiom", "word": "Fair-weather friend", "meaning": "मतलबी दोस्त (A friend who deserts you in difficult times)", "important": true}, {"day": "Day 5", "type": "Idiom", "word": "In black and white", "meaning": "लिखित रूप में (In writing or print)", "important": false}, {"day": "Day 5", "type": "Idiom", "word": "Lion's share", "meaning": "सबसे बड़ा हिस्सा (The largest or best part of something)", "important": false}, {"day": "Day 5", "type": "Idiom", "word": "Red-letter day", "meaning": "अत्यंत महत्वपूर्ण व शुभ दिन (A memorable and joyful day)", "important": true}, {"day": "Day 5", "type": "Idiom", "word": "Through thick and thin", "meaning": "हर सुख-दुख में (Under all circumstances, no matter how difficult)", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Acumen", "meaning": "कुशाग्र बुद्धि / सूझबूझ | Syn: Shrewdness, Insight | Ant: Stupidity, Ignorance", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Boisterous", "meaning": "कोलाहलपूर्ण / ऊधमी | Syn: Noisy, Clamorous | Ant: Calm, Peaceful", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Cogent", "meaning": "ठोस / प्रभावशाली | Syn: Convincing, Compelling | Ant: Weak, Unconvincing", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Diffident", "meaning": "संकोची / आत्मविश्वासहीन | Syn: Shy, Timid | Ant: Confident, Bold", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Enervate", "meaning": "कमज़ोर करना | Syn: Weaken, Exhaust | Ant: Energize, Invigorate", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Mitigate", "meaning": "कम करना / शांत करना | Syn: Alleviate, Lessen | Ant: Aggravate, Intensify", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Parsimonious", "meaning": "कंजूस / मितव्ययी | Syn: Miserly, Stingy | Ant: Generous, Lavish", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Sagacious", "meaning": "बुद्धिमान / दूरदर्शी | Syn: Wise, Astute | Ant: Foolish, Naive", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Superfluous", "meaning": "अनावश्यक / फालतू | Syn: Redundant, Excessive | Ant: Necessary, Essential", "important": true}, {"day": "Day 5", "type": "Syn/Ant", "word": "Zealous", "meaning": "उत्साही / जोशीला | Syn: Enthusiastic, Fervent | Ant: Apathetic, Indifferent", "important": true}], "passages": [{"day": "Day 1", "title": "Urban Libraries & Focused Preparation", "text": "In recent years, urban libraries have quietly transformed from mere repositories of dusty books into vibrant hubs of focused learning. With the rise of remote work and competitive examinations, young aspirants increasingly seek distraction-free environments outside their homes. Libraries offer not only silence and high-speed internet, but also a subtle psychological advantage: seeing peers engrossed in study fosters discipline and accountability. However, merely occupying a desk for long hours does not guarantee success; structured planning, periodic revision, and active recall remain the true pillars of retention.", "questions": [{"q": "What is the primary reason young aspirants are turning to urban libraries?", "opts": ["To borrow rare dusty books", "To find distraction-free environments for focused learning", "To socialize with friends", "To avoid buying books"], "ans": 1}, {"q": "According to the passage, what psychological benefit does studying in a library provide?", "opts": ["Reduces exam syllabus", "Seeing peers study fosters discipline and accountability", "Guarantees selection automatically", "Eliminates need for revision"], "ans": 1}, {"q": "Which word in the passage is closest in meaning to 'absorbed' or 'deeply engaged'?", "opts": ["Repositories", "Fosters", "Engrossed", "Retention"], "ans": 2}]}, {"day": "Day 2", "title": "Digital Public Infrastructure in India", "text": "Digital public infrastructure has fundamentally reshaped financial inclusion across India. By linking biometric identity with real-time payment rails, millions of citizens in rural and semi-urban regions have gained seamless access to formal banking and direct benefit transfers. Beyond convenience, this architecture has reduced leakages in welfare delivery and empowered small street vendors to build verifiable digital transaction histories, thereby unlocking affordable formal credit. However, sustained digital literacy campaigns and robust cybersecurity frameworks remain indispensable to protect first-time users from online fraud.", "questions": [{"q": "How has digital public infrastructure helped small street vendors?", "opts": ["By giving them free smartphones", "By enabling verifiable digital transaction histories for affordable formal credit", "By exempting them from all taxes", "By closing rural banks"], "ans": 1}, {"q": "What two measures are described as indispensable for protecting first-time users?", "opts": ["Free internet and cashbacks", "Digital literacy campaigns and robust cybersecurity frameworks", "New bank branches and paper passbooks", "Higher interest rates"], "ans": 1}, {"q": "Find a word in the passage that means 'smooth and without interruption'.", "opts": ["Biometric", "Leakages", "Seamless", "Indispensable"], "ans": 2}]}, {"day": "Day 3", "title": "Renewable Energy Transition & Grid Stability", "text": "As nations accelerate their transition toward solar and wind power, maintaining electrical grid stability has emerged as a critical engineering priority. Unlike conventional thermal plants that generate steady baseload electricity, renewable sources fluctuate with weather and daylight. Consequently, energy storage technologies—particularly utility-scale lithium-ion batteries and pumped hydro storage—are becoming indispensable. Modernizing transmission networks with smart sensors and predictive load balancing ensures uninterrupted power supply while curbing carbon emissions.", "questions": [{"q": "Why do renewable energy sources create challenges for electrical grid stability?", "opts": ["They are too expensive to build", "They fluctuate with weather and daylight unlike steady thermal plants", "They produce excess carbon emissions", "They cannot be connected to smart sensors"], "ans": 1}, {"q": "Which technologies are mentioned as indispensable for storing renewable energy?", "opts": ["Diesel generators and coal reserves", "Utility-scale lithium-ion batteries and pumped hydro storage", "Nuclear reactors", "Wind turbines alone"], "ans": 1}, {"q": "What does the word 'curbing' in the last sentence mean?", "opts": ["Increasing", "Restraining or reducing", "Ignoring", "Exporting"], "ans": 1}]}, {"day": "Day 4", "title": "Urban Green Spaces & Heat Island Mitigation", "text": "Urban green spaces, such as public parks and tree-lined avenues, play a vital role in mitigating the urban heat island effect. Dense concrete structures absorb and re-emit solar radiation, causing city temperatures to remain significantly higher than surrounding rural areas. Vegetation cools the environment naturally through shade and evapotranspiration while simultaneously filtering airborne pollutants. Beyond ecological benefits, accessible green zones foster community interaction and alleviate mental fatigue among city dwellers.", "questions": [{"q": "Why do cities experience higher temperatures than surrounding rural areas?", "opts": ["Because of fewer streetlights", "Dense concrete structures absorb and re-emit solar radiation", "Lack of wind turbines", "Higher rainfall in cities"], "ans": 1}, {"q": "How does vegetation cool the urban environment naturally?", "opts": ["Through artificial sprinklers", "Through shade and evapotranspiration", "By reflecting sunlight into space", "By blocking all winds"], "ans": 1}, {"q": "Which word in the passage means 'reducing the severity of'?", "opts": ["Absorb", "Mitigating", "Dwellers", "Simultaneously"], "ans": 1}]}, {"day": "Day 5", "title": "The Power of Spaced Repetition in Exam Prep", "text": "Cognitive psychology demonstrates that human memory decays rapidly unless newly acquired information is reviewed at strategic intervals—a phenomenon known as the forgetting curve. Passive rereading of notes often creates an illusion of competence without strengthening neural pathways. In contrast, active recall combined with spaced repetition forces the brain to retrieve facts from memory, significantly enhancing long-term retention. For aspirants juggling full-time jobs alongside competitive exam preparation, short daily recall drills yield far superior results than infrequent marathon cramming sessions.", "questions": [{"q": "Why is passive rereading considered less effective according to the passage?", "opts": ["It takes too much paper", "It creates an illusion of competence without strengthening neural pathways", "It is only useful for mathematics", "It causes eye strain immediately"], "ans": 1}, {"q": "What study strategy is recommended for aspirants managing full-time jobs?", "opts": ["Infrequent marathon cramming sessions", "Short daily active recall drills with spaced repetition", "Skipping revision altogether", "Reading only once before the exam"], "ans": 1}, {"q": "Find a word in the passage that means 'to recover or bring back stored information'.", "opts": ["Decays", "Retrieve", "Illusion", "Juggling"], "ans": 1}]}]};
+
+// Strict HTML Entity Escaper (Prevents DOM XSS attacks)
+function esc(str) {
+  if (str === null || str === undefined) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+let appData = BUILTIN_DATA;
+let starredWords = new Set(JSON.parse(localStorage.getItem("ssc_v4_stars") || "[]"));
+let userStats = JSON.parse(localStorage.getItem("ssc_v4_stats") || '{"att":0,"ok":0,"cats":{"OWS":{"att":0,"ok":0},"Idiom":{"att":0,"ok":0},"Syn/Ant":{"att":0,"ok":0}},"weak":{}}');
+let blurMode = false;
+let rcFontSize = 0.96;
+let quizItems = [];
+let quizPicks = {};
+let quizDone = false;
+
+// ==========================================
+// SECURITY ENGINE: SHA-256 PIN + AES-GCM VAULT + BRUTE-FORCE LOCKOUT
+// ==========================================
+let sessionPin = null;
+const MAX_ATTEMPTS = 3;
+const LOCKOUT_MS = 5 * 60 * 1000; // 5 minutes lockout
+
+async function sha256Hex(text) {
+  const enc = new TextEncoder().encode(text);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function deriveAesKey(pin, saltBytes) {
+  const baseKey = await crypto.subtle.importKey(
+    "raw", new TextEncoder().encode(pin), "PBKDF2", false, ["deriveKey"]
+  );
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: saltBytes, iterations: 120000, hash: "SHA-256" },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["encrypt", "decrypt"]
+  );
+}
+
+async function encryptToken(plainToken, pin) {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await deriveAesKey(pin, salt);
+  const cipher = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(plainToken));
+  return JSON.stringify({
+    s: btoa(String.fromCharCode(...salt)),
+    i: btoa(String.fromCharCode(...iv)),
+    c: btoa(String.fromCharCode(...new Uint8Array(cipher)))
+  });
+}
+
+async function decryptToken(packedJson, pin) {
+  const obj = JSON.parse(packedJson);
+  const salt = Uint8Array.from(atob(obj.s), c => c.charCodeAt(0));
+  const iv = Uint8Array.from(atob(obj.i), c => c.charCodeAt(0));
+  const cipher = Uint8Array.from(atob(obj.c), c => c.charCodeAt(0));
+  const key = await deriveAesKey(pin, salt);
+  const plainBuf = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, cipher);
+  return new TextDecoder().decode(plainBuf);
+}
+
+function openPinFlow() {
+  const lockUntil = parseInt(localStorage.getItem("ssc_v4_lock_until") || "0");
+  const errBox = document.getElementById("pin-err");
+  if (Date.now() < lockUntil) {
+    const mins = Math.ceil((lockUntil - Date.now()) / 60000);
+    errBox.innerText = `Security Lockout Active! Try again in ${mins} minute(s).`;
+    document.getElementById("pin-submit-btn").disabled = true;
+  } else {
+    errBox.innerText = "";
+    document.getElementById("pin-submit-btn").disabled = false;
+  }
+
+  const savedHash = localStorage.getItem("ssc_v4_pin_hash");
+  if (!savedHash) {
+    document.getElementById("pin-modal-title").innerText = "Create Your Secret Admin PIN";
+    document.getElementById("pin-modal-desc").innerText = "First-time setup: Apna ek naya 6+ digit secret PIN banayein (yeh SHA-256 hash hokar save hoga, code mein kabhi nahi dikhega).";
+    document.getElementById("pin-submit-btn").innerText = "Set PIN & Unlock";
+  } else {
+    document.getElementById("pin-modal-title").innerText = "Admin Security Verification";
+    document.getElementById("pin-modal-desc").innerText = "Apna secret Admin PIN dalein (3 galat attempts par 5 minute lockout lagega).";
+    document.getElementById("pin-submit-btn").innerText = "Verify & Unlock";
+  }
+  openModal("pin-modal");
+}
+
+async function handlePinSubmit() {
+  const lockUntil = parseInt(localStorage.getItem("ssc_v4_lock_until") || "0");
+  const errBox = document.getElementById("pin-err");
+  if (Date.now() < lockUntil) return;
+
+  const pinVal = document.getElementById("admin-pin-input").value.trim();
+  if (pinVal.length < 4) {
+    errBox.innerText = "PIN kam se kam 4-6 digits ka hona chahiye!";
+    return;
+  }
+
+  const savedHash = localStorage.getItem("ssc_v4_pin_hash");
+  const inputHash = await sha256Hex("SSC_SALT_9824_" + pinVal);
+
+  if (!savedHash) {
+    localStorage.setItem("ssc_v4_pin_hash", inputHash);
+    sessionPin = pinVal;
+    localStorage.setItem("ssc_v4_fail_cnt", "0");
+    unlockSuccess();
+    return;
+  }
+
+  if (inputHash === savedHash) {
+    sessionPin = pinVal;
+    localStorage.setItem("ssc_v4_fail_cnt", "0");
+    unlockSuccess();
+  } else {
+    const fails = parseInt(localStorage.getItem("ssc_v4_fail_cnt") || "0") + 1;
+    localStorage.setItem("ssc_v4_fail_cnt", String(fails));
+    if (fails >= MAX_ATTEMPTS) {
+      localStorage.setItem("ssc_v4_lock_until", String(Date.now() + LOCKOUT_MS));
+      localStorage.setItem("ssc_v4_fail_cnt", "0");
+      errBox.innerText = "3 wrong attempts! Admin locked for 5 minutes.";
+      document.getElementById("pin-submit-btn").disabled = true;
+    } else {
+      errBox.innerText = `Galat PIN! (${MAX_ATTEMPTS - fails} attempt(s) remaining)`;
+    }
+  }
+}
+
+async function unlockSuccess() {
+  document.getElementById("admin-pin-input").value = "";
+  document.getElementById("pin-err").innerText = "";
+  closeModal("pin-modal");
+  document.getElementById("admin-pill-btn").style.display = "inline-block";
+
+  if (localStorage.getItem("ssc_gh_owner")) document.getElementById("gh-owner").value = localStorage.getItem("ssc_gh_owner");
+  if (localStorage.getItem("ssc_gh_repo")) document.getElementById("gh-repo").value = localStorage.getItem("ssc_gh_repo");
+
+  const encTok = localStorage.getItem("ssc_v4_enc_token");
+  if (encTok && sessionPin) {
+    try {
+      document.getElementById("gh-token").value = await decryptToken(encTok, sessionPin);
+    } catch (e) {}
+  }
+  openModal("admin-modal");
+}
+
+function lockAdmin() {
+  sessionPin = null;
+  document.getElementById("gh-token").value = "";
+  document.getElementById("admin-pill-btn").style.display = "none";
+  closeModal("admin-modal");
+}
+
+function resetAdminPIN() {
+  localStorage.removeItem("ssc_v4_pin_hash");
+  localStorage.removeItem("ssc_v4_enc_token");
+  lockAdmin();
+  openPinFlow();
+}
+
+// Secret 5-tap trigger
+let tapCount = 0, tapTimer = null;
+document.getElementById("secret-admin-trigger").addEventListener("click", () => {
+  tapCount++;
+  clearTimeout(tapTimer);
+  tapTimer = setTimeout(() => { tapCount = 0; }, 1500);
+  if (tapCount >= 5) {
+    tapCount = 0;
+    if (sessionPin) openModal("admin-modal");
+    else openPinFlow();
+  }
+});
+
+if (new URLSearchParams(window.location.search).get("admin") === "1") {
+  setTimeout(() => { if (!sessionPin) openPinFlow(); }, 300);
+}
+
+// Theme Setup
+function applyTheme(mode) {
+  if (mode === "dark") {
+    document.body.classList.add("dark");
+    document.getElementById("theme-btn").innerText = "☀️ Light";
+  } else {
+    document.body.classList.remove("dark");
+    document.getElementById("theme-btn").innerText = "🌙 Dark";
+  }
+  localStorage.setItem("ssc_v4_theme", mode);
+}
+function toggleTheme() {
+  applyTheme(document.body.classList.contains("dark") ? "light" : "dark");
+}
+applyTheme(localStorage.getItem("ssc_v4_theme") || "light");
+
+// Strict Schema Validator for incoming vocab JSON
+function validateAndSanitizeVocabArray(rawJsonText) {
+  const parsed = JSON.parse(rawJsonText);
+  if (!Array.isArray(parsed) || parsed.length === 0 || parsed.length > 200) {
+    throw new Error("JSON must be an array of 1 to 200 vocab objects.");
+  }
+  const allowedTypes = new Set(["OWS", "Idiom", "Syn/Ant"]);
+  return parsed.map((item, idx) => {
+    if (!item || typeof item !== "object") throw new Error(`Invalid entry at index ${idx}`);
+    const day = String(item.day || "").trim().slice(0, 25);
+    const type = String(item.type || "").trim();
+    const word = String(item.word || "").trim().slice(0, 120);
+    const meaning = String(item.meaning || "").trim().slice(0, 400);
+    if (!day || !word || !meaning || !allowedTypes.has(type)) {
+      throw new Error(`Invalid fields at item #${idx + 1} (type must be OWS, Idiom, or Syn/Ant).`);
+    }
+    return { day, type, word, meaning, important: Boolean(item.important) };
+  });
+}
+
+async function init() {
+  try {
+    const r = await fetch("data/content.json?t=" + Date.now());
+    if (r.ok) appData = await r.json();
+  } catch (e) {}
+
+  const localExtra = JSON.parse(localStorage.getItem("ssc_v4_extra_vocab") || "[]");
+  if (localExtra.length > 0) {
+    const existingSet = new Set(appData.vocab.map(x => x.word.toLowerCase()));
+    localExtra.forEach(item => {
+      if (!existingSet.has(item.word.toLowerCase())) appData.vocab.push(item);
+    });
+  }
+
+  if (!localStorage.getItem("ssc_v4_star_seeded")) {
+    appData.vocab.forEach(v => { if (v.important) starredWords.add(v.word); });
+    saveStars();
+    localStorage.setItem("ssc_v4_star_seeded", "1");
+  }
+
+  const days = [...new Set(appData.vocab.map(v => v.day))].reverse();
+  document.getElementById("sync-lbl").innerText = `${days.length} Days • ${appData.vocab.length} Words`;
+
+  const daySel = document.getElementById("sel-day");
+  daySel.innerHTML = days.map((d, i) => `<option value="${esc(d)}">${esc(d)}${i === 0 ? ' (Latest)' : ''}</option>`).join("") + `<option value="ALL">All Days (${appData.vocab.length})</option>`;
+
+  const rcSel = document.getElementById("sel-rc-day");
+  const passages = [...(appData.passages || [])].reverse();
+  rcSel.innerHTML = passages.map((p, idx) => `<option value="${idx}">${esc(p.day)}: ${esc(p.title)}</option>`).join("");
+
+  renderCards();
+  renderImp();
+  generateTest();
+  renderRC();
+  renderAnalysis();
+}
+
+function saveStars() {
+  localStorage.setItem("ssc_v4_stars", JSON.stringify([...starredWords]));
+  document.getElementById("imp-total").innerText = appData.vocab.filter(v => starredWords.has(v.word)).length;
+}
+
+function toggleStar(word) {
+  if (starredWords.has(word)) starredWords.delete(word);
+  else starredWords.add(word);
+  saveStars();
+  renderCards();
+  renderImp();
+}
+
+function speakWord(word) {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = "en-US";
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  }
+}
+
+function toggleBlur() {
+  blurMode = !blurMode;
+  document.getElementById("blur-btn").innerText = blurMode ? "👁️ Show Meanings" : "👁️ Hide Meanings (Recall Mode)";
+  renderCards();
+}
+
+function buildWordCard(v) {
+  const isStar = starredWords.has(v.word);
+  const pillCls = v.type === "OWS" ? "p-ows" : (v.type === "Idiom" ? "p-idiom" : "p-syn");
+  const safeData = esc(v.word);
+  return `
+    <div class="v-card">
+      <div class="v-top">
+        <div class="v-badges">
+          <span class="pill p-day">${esc(v.day)}</span>
+          <span class="pill ${pillCls}">${esc(v.type)}</span>
+        </div>
+        <div class="v-tools">
+          <button class="tool-btn" data-word="${safeData}" onclick="speakWord(this.dataset.word)" title="Listen">🔊</button>
+          <button class="tool-btn ${isStar ? 'star-active' : ''}" data-word="${safeData}" onclick="toggleStar(this.dataset.word)" title="Important">★</button>
+        </div>
+      </div>
+      <div class="v-word">${esc(v.word)}</div>
+      <div class="v-meaning ${blurMode ? 'blurred' : ''}" onclick="this.classList.remove('blurred')">${esc(v.meaning)}</div>
+    </div>
+  `;
+}
+
+function renderCards() {
+  const dayVal = document.getElementById("sel-day").value;
+  const catVal = document.getElementById("sel-cat").value;
+  const q = document.getElementById("inp-search").value.trim().toLowerCase();
+
+  let list = [...appData.vocab].reverse();
+  if (dayVal !== "ALL") list = list.filter(v => v.day === dayVal);
+  if (catVal !== "ALL") list = list.filter(v => v.type === catVal);
+  if (q) list = list.filter(v => v.word.toLowerCase().includes(q) || v.meaning.toLowerCase().includes(q));
+
+  document.getElementById("showing-cnt").innerText = `Showing ${list.length} words`;
+  document.getElementById("cards-container").innerHTML = list.length
+    ? list.map(buildWordCard).join("")
+    : `<div class="filter-card" style="text-align:center;color:var(--text-sub);">No matching words found.</div>`;
+}
+
+function renderImp() {
+  const list = [...appData.vocab].reverse().filter(v => starredWords.has(v.word));
+  document.getElementById("imp-total").innerText = list.length;
+  document.getElementById("imp-container").innerHTML = list.length
+    ? list.map(buildWordCard).join("")
+    : `<div class="filter-card" style="text-align:center;color:var(--text-sub);">Kisi bhi word par ★ dabakar use Important list mein jodein.</div>`;
+}
+
+// Quiz Section
+function launchTest(mode) {
+  document.getElementById("test-mode").value = mode;
+  goTab("test", document.querySelectorAll(".b-tab")[2]);
+  generateTest();
+}
+
+function generateTest() {
+  const mode = document.getElementById("test-mode").value;
+  let pool = [...appData.vocab];
+  const latestDay = [...new Set(appData.vocab.map(v => v.day))].pop();
+
+  if (mode === "LATEST") pool = pool.filter(v => v.day === latestDay);
+  else if (mode === "IMPORTANT") pool = pool.filter(v => starredWords.has(v.word));
+  else if (mode === "WEAK") pool = pool.filter(v => userStats.weak[v.word]);
+
+  const bar = document.getElementById("test-score-bar");
+  if (pool.length === 0) {
+    quizItems = [];
+    bar.innerText = "";
+    document.getElementById("quiz-container").innerHTML = `<div class="filter-card" style="text-align:center;color:var(--text-sub);">Is category mein abhi koi word nahi hai. Pehle 'All Words Mix' ya 'Latest Day' test dein!</div>`;
+    return;
+  }
+
+  const chosen = pool.sort(() => Math.random() - 0.5).slice(0, Math.min(20, pool.length));
+  quizItems = chosen.map((item, i) => {
+    const sameCat = appData.vocab.filter(x => x.type === item.type && x.word !== item.word);
+    const distSource = sameCat.length >= 3 ? sameCat : appData.vocab.filter(x => x.word !== item.word);
+    const wrongs = distSource.sort(() => Math.random() - 0.5).slice(0, 3).map(x => x.meaning);
+    const opts = [item.meaning, ...wrongs].sort(() => Math.random() - 0.5);
+    return { num: i + 1, item, opts, ans: opts.indexOf(item.meaning) };
+  });
+
+  quizPicks = {};
+  quizDone = false;
+  bar.innerHTML = `Mode: <span style="color:var(--primary);">${esc(mode)}</span> (${quizItems.length} Questions)`;
+  renderTest();
+}
+
+function selectOpt(qIdx, oIdx) {
+  if (quizDone) return;
+  quizPicks[qIdx] = oIdx;
+  renderTest();
+}
+
+function clearCurrentTest() {
+  quizPicks = {};
+  quizDone = false;
+  renderTest();
+}
+
+function submitTest() {
+  if (!quizItems.length || quizDone) return;
+  quizDone = true;
+  let right = 0, att = 0;
+
+  quizItems.forEach((q, i) => {
+    const pick = quizPicks[i];
+    if (pick !== undefined) {
+      att++;
+      userStats.att++;
+      const c = q.item.type;
+      if (!userStats.cats[c]) userStats.cats[c] = { att: 0, ok: 0 };
+      userStats.cats[c].att++;
+
+      if (pick === q.ans) {
+        right++;
+        userStats.ok++;
+        userStats.cats[c].ok++;
+        delete userStats.weak[q.item.word];
+      } else {
+        userStats.weak[q.item.word] = (userStats.weak[q.item.word] || 0) + 1;
+        starredWords.add(q.item.word);
+      }
+    }
+  });
+
+  saveStars();
+  localStorage.setItem("ssc_v4_stats", JSON.stringify(userStats));
+  document.getElementById("test-score-bar").innerHTML = `Result: <span style="color:var(--green);">${right} Right</span> | <span style="color:var(--red);">${att - right} Wrong</span> (${att}/${quizItems.length} Attempted)`;
+  renderTest();
+}
+
+function renderTest() {
+  const letters = ["A", "B", "C", "D"];
+  document.getElementById("quiz-container").innerHTML = quizItems.map((q, i) => {
+    const pick = quizPicks[i];
+    let cls = "q-card";
+    if (quizDone && pick !== undefined) cls += (pick === q.ans ? " ok" : " bad");
+
+    const optsHtml = q.opts.map((txt, oi) => {
+      let bCls = "opt-btn";
+      if (pick === oi) bCls += " selected";
+      if (quizDone) {
+        if (oi === q.ans) bCls += " correct";
+        else if (pick === oi && pick !== q.ans) bCls += " wrong";
+      }
+      return `<button class="${bCls}" onclick="selectOpt(${i}, ${oi})"><strong>(${letters[oi]})</strong><span>${esc(txt)}</span></button>`;
+    }).join("");
+
+    let note = "";
+    if (quizDone) {
+      const ok = pick === q.ans;
+      note = `<div class="sol-note show ${ok ? 'ok' : 'bad'}"><strong>${ok ? 'Sahi Jawaab!' : 'Sahi Arth:'}</strong> ${esc(q.item.word)} &rarr; ${esc(q.item.meaning)}</div>`;
+    }
+
+    return `
+      <div class="${cls}">
+        <div class="q-meta"><span>Q${q.num} • ${esc(q.item.type)}</span><span>${esc(q.item.day)}</span></div>
+        <div class="q-title">Meaning of: <span style="color:var(--primary);">"${esc(q.item.word)}"</span></div>
+        <div class="opt-list">${optsHtml}</div>
+        ${note}
+      </div>
+    `;
+  }).join("");
+}
+
+// Reading Comprehension
+function changeFontSize(delta) {
+  rcFontSize = Math.min(1.25, Math.max(0.85, rcFontSize + delta * 0.06));
+  renderRC();
+}
+
+function renderRC() {
+  const passages = [...(appData.passages || [])].reverse();
+  const idx = parseInt(document.getElementById("sel-rc-day").value || "0");
+  const p = passages[idx];
+  if (!p) return;
+
+  const qs = p.questions.map((q, qi) => {
+    const opts = q.opts.map((o, oi) => `
+      <label style="display:flex;gap:8px;align-items:flex-start;padding:7px 9px;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;margin-top:6px;cursor:pointer;font-size:0.9rem;">
+        <input type="radio" name="rcq_${qi}" value="${oi}" style="margin-top:3px;"> <span>${esc(o)}</span>
+      </label>
+    `).join("");
+    return `<div style="margin-bottom:14px;"><div style="font-weight:700;font-size:0.95rem;">Q${qi + 1}. ${esc(q.q)}</div>${opts}<div id="rc_fb_${qi}" style="font-size:0.84rem;font-weight:700;margin-top:4px;"></div></div>`;
+  }).join("");
+
+  document.getElementById("rc-box").innerHTML = `
+    <div class="filter-card">
+      <div style="font-weight:800;font-size:1.05rem;color:var(--primary);margin-bottom:8px;">${esc(p.day)}: ${esc(p.title)}</div>
+      <div class="passage-text" style="font-size:${rcFontSize}rem;">${esc(p.text)}</div>
+      ${qs}
+      <button class="btn btn-green" style="width:100%;" onclick="gradeRC(${idx})">Check Passage Answers</button>
+    </div>
+  `;
+}
+
+function gradeRC(idx) {
+  const passages = [...(appData.passages || [])].reverse();
+  const p = passages[idx];
+  p.questions.forEach((q, qi) => {
+    const sel = document.querySelector(`input[name="rcq_${qi}"]:checked`);
+    const fb = document.getElementById(`rc_fb_${qi}`);
+    if (sel && parseInt(sel.value) === q.ans) {
+      fb.style.color = "var(--green)";
+      fb.innerText = "Correct! ✓";
+    } else {
+      fb.style.color = "var(--red)";
+      fb.innerText = "Correct Answer: " + q.opts[q.ans];
+    }
+  });
+}
+
+// Analysis
+function renderAnalysis() {
+  const acc = userStats.att > 0 ? Math.round((userStats.ok / userStats.att) * 100) : 0;
+  const weaks = Object.keys(userStats.weak);
+
+  document.getElementById("kpi-area").innerHTML = `
+    <div class="kpi-box"><div class="kpi-num">${userStats.att}</div><div class="kpi-lbl">Questions Attempted</div></div>
+    <div class="kpi-box"><div class="kpi-num" style="color:var(--green);">${userStats.ok}</div><div class="kpi-lbl">Correct Answers</div></div>
+    <div class="kpi-box"><div class="kpi-num">${acc}%</div><div class="kpi-lbl">Overall Accuracy</div></div>
+    <div class="kpi-box"><div class="kpi-num" style="color:var(--red);">${weaks.length}</div><div class="kpi-lbl">Weak Words</div></div>
+  `;
+
+  document.getElementById("bars-area").innerHTML = ["OWS", "Idiom", "Syn/Ant"].map(c => {
+    const d = userStats.cats[c] || { att: 0, ok: 0 };
+    const p = d.att > 0 ? Math.round((d.ok / d.att) * 100) : 0;
+    return `
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:0.86rem;font-weight:700;">
+          <span>${esc(c)}</span><span>${d.ok}/${d.att} (${p}%)</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:${p}%;"></div></div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("weak-cnt").innerText = weaks.length;
+  document.getElementById("weak-area").innerHTML = weaks.length
+    ? weaks.map(w => `<span class="weak-chip">${esc(w)} (${userStats.weak[w]}x)</span>`).join("")
+    : `<div style="font-size:0.88rem;color:var(--green);font-weight:700;">Abhi koi weak word nahi hai! Test dene par galat words yahan dikhenge.</div>`;
+}
+
+function resetAllStats() {
+  userStats = { att: 0, ok: 0, cats: { OWS: { att: 0, ok: 0 }, Idiom: { att: 0, ok: 0 }, "Syn/Ant": { att: 0, ok: 0 } }, weak: {} };
+  localStorage.setItem("ssc_v4_stats", JSON.stringify(userStats));
+  renderAnalysis();
+}
+
+// Navigation & Modals
+function goTab(name, btn) {
+  document.querySelectorAll(".view-sec").forEach(s => s.style.display = "none");
+  document.getElementById("view-" + name).style.display = "block";
+  document.querySelectorAll(".b-tab").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  if (name === "analysis") renderAnalysis();
+  if (name === "imp") renderImp();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function openModal(id) { document.getElementById(id).classList.add("open"); }
+function closeModal(id) { document.getElementById(id).classList.remove("open"); }
+
+function saveLocalOnly() {
+  const msg = document.getElementById("admin-status-msg");
+  try {
+    const arr = validateAndSanitizeVocabArray(document.getElementById("json-input").value.trim());
+    const prev = JSON.parse(localStorage.getItem("ssc_v4_extra_vocab") || "[]");
+    localStorage.setItem("ssc_v4_extra_vocab", JSON.stringify([...prev, ...arr]));
+    document.getElementById("json-input").value = "";
+    msg.style.color = "var(--green)";
+    msg.innerText = `Validated & saved ${arr.length} words locally!`;
+    setTimeout(() => { closeModal("admin-modal"); init(); }, 700);
+  } catch (e) {
+    msg.style.color = "var(--red)";
+    msg.innerText = "Security/Format Error: " + e.message;
+  }
+}
+
+async function publishLiveToGitHub() {
+  if (!sessionPin) return;
+  const msg = document.getElementById("admin-status-msg");
+  const owner = document.getElementById("gh-owner").value.trim();
+  const repo = document.getElementById("gh-repo").value.trim();
+  const token = document.getElementById("gh-token").value.trim();
+
+  if (!/^[a-zA-Z0-9-]+$/.test(owner) || !/^[a-zA-Z0-9._-]+$/.test(repo) || !token) {
+    msg.style.color = "var(--red)";
+    msg.innerText = "Valid GitHub Username, Repo Name, aur Token dalein!";
+    return;
+  }
+
+  // Encrypt token with AES-GCM before storing in browser
+  localStorage.setItem("ssc_gh_owner", owner);
+  localStorage.setItem("ssc_gh_repo", repo);
+  const encryptedBlob = await encryptToken(token, sessionPin);
+  localStorage.setItem("ssc_v4_enc_token", encryptedBlob);
+
+  let newItems = [];
+  try {
+    newItems = validateAndSanitizeVocabArray(document.getElementById("json-input").value.trim());
+  } catch (e) {
+    msg.style.color = "var(--red)";
+    msg.innerText = "Blocked by Schema Firewall: " + e.message;
+    return;
+  }
+
+  msg.style.color = "var(--primary)";
+  msg.innerText = "Publishing encrypted commit to GitHub...";
+
+  try {
+    const apiUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/data/content.json`;
+    const getRes = await fetch(apiUrl, {
+      headers: { "Authorization": `Bearer ${token}`, "Accept": "application/vnd.github+json" }
+    });
+    if (!getRes.ok) throw new Error("GitHub fetch failed. Verify Fine-Grained Token & Repo.");
+    const fileMeta = await getRes.json();
+
+    const decodedStr = decodeURIComponent(escape(atob(fileMeta.content.replace(/\n/g, ""))));
+    const currentData = JSON.parse(decodedStr);
+
+    const existingSet = new Set(currentData.vocab.map(x => x.word.toLowerCase()));
+    let addedCount = 0;
+    newItems.forEach(item => {
+      if (!existingSet.has(item.word.toLowerCase())) {
+        currentData.vocab.push(item);
+        addedCount++;
+      }
+    });
+
+    const days = [...new Set(currentData.vocab.map(x => x.day))];
+    currentData.day_count = days.length;
+    currentData.last_updated = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) + " IST";
+
+    const updatedStr = JSON.stringify(currentData, null, 2);
+    const encodedBase64 = btoa(unescape(encodeURIComponent(updatedStr)));
+
+    const putRes = await fetch(apiUrl, {
+      method: "PUT",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: `Admin added ${addedCount} verified SSC vocab words`,
+        content: encodedBase64,
+        sha: fileMeta.sha
+      })
+    });
+
+    if (!putRes.ok) throw new Error("Commit rejected. Check 'Contents: Read & Write' permission on token.");
+
+    document.getElementById("json-input").value = "";
+    msg.style.color = "var(--green)";
+    msg.innerText = `Success! ${addedCount} words published LIVE! All previous days preserved.`;
+    setTimeout(() => { closeModal("admin-modal"); init(); }, 1400);
+  } catch (err) {
+    msg.style.color = "var(--red)";
+    msg.innerText = "Error: " + err.message;
+  }
+}
+
+function downloadUpdatedJSON() {
+  const blob = new Blob([JSON.stringify(appData, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "content.json";
+  a.click();
+}
+
+init();
+</script>
+</body>
+</html>
