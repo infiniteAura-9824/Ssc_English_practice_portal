@@ -1,6 +1,6 @@
 {
-  "last_updated": "20/11/2026, 9:12:31 am IST",
-  "day_count": 6,
+  "last_updated": "21/11/2026, 9:24:14 am IST",
+  "day_count": 7,
   "vocab": [
     {
       "day": "Day 1",
@@ -1253,6 +1253,62 @@
       "type": "Syn/Ant",
       "word": "Transient",
       "meaning": "क्षणिक / अस्थायी | Syn: Temporary, Fleeting | Ant: Permanent, Enduring",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "OWS",
+      "word": "Stoic",
+      "meaning": "सुख-दुःख में सम रहने वाला (One who endures pain without complaining)",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "OWS",
+      "word": "Somnambulist",
+      "meaning": "नींद में चलने वाला (One who walks in sleep)",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "OWS",
+      "word": "Ambidextrous",
+      "meaning": "दोनों हाथों से निपुण (Able to use both hands equally well)",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "OWS",
+      "word": "Cartography",
+      "meaning": "मानचित्रकला (The science or practice of drawing maps)",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "Idiom",
+      "word": "Piece of cake",
+      "meaning": "बहुत आसान काम / बाएँ हाथ का खेल (Something very easy to do)",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "Syn/Ant",
+      "word": "Prudent",
+      "meaning": "विवेकी / दूरदर्शी | Syn: Wise, Cautious | Ant: Reckless, Foolish",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "Syn/Ant",
+      "word": "Obsolete",
+      "meaning": "अप्रचलित / पुराना | Syn: Outdated, Archaic | Ant: Modern, Current",
+      "important": false
+    },
+    {
+      "day": "Day 7",
+      "type": "Syn/Ant",
+      "word": "Ambiguous",
+      "meaning": "अस्पष्ट / द्व्यर्थी | Syn: Vague, Unclear | Ant: Clear, Explicit",
       "important": false
     }
   ],
