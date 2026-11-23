@@ -1,6 +1,6 @@
 {
-  "last_updated": "21/11/2026, 9:24:14 am IST",
-  "day_count": 7,
+  "last_updated": "23/11/2026, 9:27:59 am IST",
+  "day_count": 8,
   "vocab": [
     {
       "day": "Day 1",
@@ -1309,6 +1309,55 @@
       "type": "Syn/Ant",
       "word": "Ambiguous",
       "meaning": "अस्पष्ट / द्व्यर्थी | Syn: Vague, Unclear | Ant: Clear, Explicit",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "OWS",
+      "word": "Posthumous",
+      "meaning": "मरणोपरांत (Occurring or awarded after death)",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Idiom",
+      "word": "Cost an arm and a leg",
+      "meaning": "बहुत महंगा पड़ना (To be extremely expensive)",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Syn/Ant",
+      "word": "Cautious",
+      "meaning": "सतर्क / सावधान | Syn: Careful, Vigilant | Ant: Reckless, Careless",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Syn/Ant",
+      "word": "Diminish",
+      "meaning": "कम करना / घटना | Syn: Reduce, Decrease | Ant: Increase, Amplify",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Syn/Ant",
+      "word": "Fragile",
+      "meaning": "नाज़ुक / भंगुर | Syn: Brittle, Delicate | Ant: Sturdy, Durable",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Syn/Ant",
+      "word": "Harmony",
+      "meaning": "सामंजस्य / तालमेल | Syn: Concord, Agreement | Ant: Discord, Conflict",
+      "important": false
+    },
+    {
+      "day": "Day 8",
+      "type": "Syn/Ant",
+      "word": "Perilous",
+      "meaning": "जोखिम भरा / खतरनाक | Syn: Dangerous, Hazardous | Ant: Safe, Secure",
       "important": false
     }
   ],
