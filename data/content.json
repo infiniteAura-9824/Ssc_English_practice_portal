@@ -1,6 +1,6 @@
 {
-  "last_updated": "23/11/2026, 9:27:59 am IST",
-  "day_count": 8,
+  "last_updated": "25/11/2026, 6:10:38 am IST",
+  "day_count": 9,
   "vocab": [
     {
       "day": "Day 1",
@@ -1358,6 +1358,83 @@
       "type": "Syn/Ant",
       "word": "Perilous",
       "meaning": "जोखिम भरा / खतरनाक | Syn: Dangerous, Hazardous | Ant: Safe, Secure",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "OWS",
+      "word": "Eulogy",
+      "meaning": "प्रशस्ति भाषण / शोक-प्रशंसा (A speech or writing praising someone who died)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "OWS",
+      "word": "Numismatics",
+      "meaning": "मुद्राशास्त्र (The study or collection of coins and currency)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "OWS",
+      "word": "Vindictive",
+      "meaning": "प्रतिशोधी (Having a strong desire for revenge)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Idiom",
+      "word": "A bird's-eye view",
+      "meaning": "सरसरी निगाह / ऊपरी दृष्टिकोण (A broad general view from above)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Idiom",
+      "word": "Bite off more than one can chew",
+      "meaning": "अपनी क्षमता से अधिक काम हाथ में लेना (Take on a task too big to handle)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Idiom",
+      "word": "Make no bones about",
+      "meaning": "बिना हिचकिचाहट साफ-साफ कहना (State or deal with something openly without hesitation)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Idiom",
+      "word": "Throw in the towel",
+      "meaning": "हार मान लेना (Admit defeat and give up)",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Syn/Ant",
+      "word": "Eradicate",
+      "meaning": "जड़ से मिटाना | Syn: Eliminate, Uproot | Ant: Establish, Preserve",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Syn/Ant",
+      "word": "Fickle",
+      "meaning": "चंचल / अस्थिर | Syn: Capricious, Inconstant | Ant: Constant, Steadfast",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Syn/Ant",
+      "word": "Indigenous",
+      "meaning": "स्वदेशी / देशी | Syn: Native, Domestic | Ant: Foreign, Exotic",
+      "important": false
+    },
+    {
+      "day": "Day 10",
+      "type": "Syn/Ant",
+      "word": "Obdurate",
+      "meaning": "हठी / जिद्दी | Syn: Stubborn, Obstinate | Ant: Compliant, Flexible",
       "important": false
     }
   ],
