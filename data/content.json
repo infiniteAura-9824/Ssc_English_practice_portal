@@ -1,6 +1,6 @@
 {
-  "last_updated": "25/11/2026, 9:59:15 am IST",
-  "day_count": 10,
+  "last_updated": "26/11/2026, 10:39:06 am IST",
+  "day_count": 11,
   "vocab": [
     {
       "day": "Day 1",
@@ -1512,6 +1512,111 @@
       "type": "Syn/Ant",
       "word": "Obscure",
       "meaning": "अस्पष्ट / धुंधला | Syn: Unclear, Vague | Ant: Clear, Obvious",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "OWS",
+      "word": "Anachronism",
+      "meaning": "कालदोष / पुराने समय की चीज़ (Something belonging to a different historical period)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "OWS",
+      "word": "Egalitarian",
+      "meaning": "समतावादी (Believing in equal rights and opportunities for all people)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "OWS",
+      "word": "Iconic",
+      "meaning": "प्रतिष्ठित / प्रतीकात्मक (Widely recognized and well-established as a symbol)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "OWS",
+      "word": "Xenophobia",
+      "meaning": "विदेशियों के प्रति भय या घृणा (Dislike of or prejudice against people from other countries)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "A dime a dozen",
+      "meaning": "कौड़ियों के भाव / बहुत आम (Very common and of little special value)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Beat a dead horse",
+      "meaning": "बेकार की कोशिश करना (Waste effort on something that cannot succeed)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Caught red-handed",
+      "meaning": "रंगे हाथों पकड़े जाना (Caught in the act of doing something wrong)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Drop in the bucket",
+      "meaning": "ऊँट के मुँह में जीरा (A tiny, insignificant amount compared to what is needed)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Go the extra mile",
+      "meaning": "उम्मीद से बढ़कर मेहनत करना (Make more effort than is expected)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "In the doldrums",
+      "meaning": "उदासी या सुस्ती के दौर में होना (Feeling sad, sluggish, or stagnant)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Jump on the bandwagon",
+      "meaning": "बहती गंगा में हाथ धोना / चलन में शामिल होना (Join a popular trend or activity)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Idiom",
+      "word": "Turn a blind eye",
+      "meaning": "अनदेखा करना / आँखें मूँद लेना (Pretend not to notice something wrong)",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Syn/Ant",
+      "word": "Dexterous",
+      "meaning": "निपुण / कुशल | Syn: Skillful, Adroit | Ant: Clumsy, Inept",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Syn/Ant",
+      "word": "Hamper",
+      "meaning": "बाधा डालना | Syn: Hinder, Obstruct | Ant: Facilitate, Assist",
+      "important": false
+    },
+    {
+      "day": "Day 11",
+      "type": "Syn/Ant",
+      "word": "Innocuous",
+      "meaning": "अहानिकारक / सीधा | Syn: Harmless, Safe | Ant: Harmful, Toxic",
       "important": false
     }
   ],
