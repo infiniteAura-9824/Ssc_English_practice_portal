@@ -1,6 +1,6 @@
 {
-  "last_updated": "26/11/2026, 10:39:06 am IST",
-  "day_count": 11,
+  "last_updated": "27/11/2026, 8:06:17 am IST",
+  "day_count": 12,
   "vocab": [
     {
       "day": "Day 1",
@@ -1617,6 +1617,139 @@
       "type": "Syn/Ant",
       "word": "Innocuous",
       "meaning": "अहानिकारक / सीधा | Syn: Harmless, Safe | Ant: Harmful, Toxic",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Amnesty",
+      "meaning": "राजक्षमा / आम माफ़ी (An official pardon for political offences)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Circumlocution",
+      "meaning": "घुमा-फिराकर बात करने की शैली (Use of many words to avoid speaking directly)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Dilettante",
+      "meaning": "शौकिया व्यक्ति (One who dabbles in an art or subject without deep commitment)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Iconoclasm",
+      "meaning": "रूढ़िभंजन / परंपराओं का विरोध (Attacking or rejecting cherished beliefs and traditions)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Malinger",
+      "meaning": "काम से बचने के लिए बीमारी का बहाना बनाना (Feign illness to escape duty or work)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Neophyte",
+      "meaning": "नौसिखिया / नया दीक्षित व्यक्ति (A beginner or new convert to a subject or belief)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "OWS",
+      "word": "Soliloquy",
+      "meaning": "स्वगत भाषण (Speaking one's thoughts aloud when alone in a play)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Idiom",
+      "word": "A wild goose chase",
+      "meaning": "निरर्थक प्रयास / व्यर्थ की खोज (A foolish and hopeless pursuit)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Idiom",
+      "word": "By hook or by crook",
+      "meaning": "किसी भी तरह से / साम-दाम-दंड-भेद से (By any possible means, fair or unfair)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Idiom",
+      "word": "Cast pearls before swine",
+      "meaning": "अयोग्य को मूल्यवान वस्तु देना (Offer valuable things to those who cannot appreciate them)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Idiom",
+      "word": "Flog a dead horse",
+      "meaning": "व्यर्थ का परिश्रम करना (Waste effort on a hopeless cause)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Idiom",
+      "word": "Hit below the belt",
+      "meaning": "अनुचित या अनैतिक वार करना (Act unfairly or cruelly)",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Abstain",
+      "meaning": "परहेज़ करना / दूर रहना | Syn: Refrain, Forbear | Ant: Indulge, Partake",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Bellicose",
+      "meaning": "लड़ाकू / युद्धप्रिय | Syn: Warlike, Pugnacious | Ant: Peaceful, Pacifist",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Disparage",
+      "meaning": "नीचा दिखाना / निंदा करना | Syn: Belittle, Denigrate | Ant: Praise, Extol",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Furtive",
+      "meaning": "गुप्त / चोरी-छिपे | Syn: Stealthy, Clandestine | Ant: Open, Candid",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Insolent",
+      "meaning": "बदतमीज़ / ढीठ | Syn: Rude, Impudent | Ant: Respectful, Polite",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Lethargy",
+      "meaning": "सुस्ती / आलस्य | Syn: Sluggishness, Torpor | Ant: Vigor, Energy",
+      "important": false
+    },
+    {
+      "day": "Day 12",
+      "type": "Syn/Ant",
+      "word": "Sanguine",
+      "meaning": "आशावादी / प्रसन्नचित्त | Syn: Optimistic, Hopeful | Ant: Pessimistic, Gloomy",
       "important": false
     }
   ],
